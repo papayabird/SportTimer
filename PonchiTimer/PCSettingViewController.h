@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "TableViewCell.h"
+#import "IHAlertView.h"
 
 @interface PCSettingViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, TableCellDelegate>
 
@@ -17,6 +18,7 @@
     PCStatusType statusType;
     NSMutableArray *activeArray;
     NSMutableDictionary *activeDict;
+    IHAlertView *alert;
 
     __weak IBOutlet UIButton *button8M;
     __weak IBOutlet UIButton *button5M;
@@ -27,6 +29,14 @@
     __weak IBOutlet UILabel *totalTimeLabel;
     
     BOOL editBool;
+    int editType;
+    int editRow;
+    
+    //inputView
+    IBOutlet UIView *inputView;
+    __weak IBOutlet UILabel *inputViewTitle;
+    __weak IBOutlet UITextField *inputViewField;
+    
 }
 
 @end

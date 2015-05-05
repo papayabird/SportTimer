@@ -9,8 +9,6 @@
 #import "PCSettingViewController.h"
 #import "AppDelegate.h"
 
-
-
 @interface PCSettingViewController ()
 
 @end
@@ -34,6 +32,9 @@
         [activeDict setObject:[NSMutableArray array] forKey:@"3M"];
     }
     [self startAction:button8M];
+    
+    alert = [[IHAlertView alloc] init];
+    alert.delegate = self;
 }
 
 - (IBAction)startAction:(id)sender
@@ -113,12 +114,45 @@
 #pragma mark - Cell Delegate
 -(void)selectModeActions:(int)indexPath
 {
-    
+    [alert displayViewAtCenter:inputView];
+    inputViewTitle.text = @"請輸入運動名稱";
+    editType = 0;
+    editRow = indexPath;
 }
 
 -(void)selectTimeActions:(int)indexPath
 {
+    [alert displayViewAtCenter:inputView];
+    inputViewTitle.text = @"請輸入運動時間";
+    editType = 1;
+    editRow = indexPath;
+}
+
+- (IBAction)inputCancel:(id)sender
+{
+    inputViewField.text = @"";
+    [alert removeAlert];
+}
+
+- (IBAction)inputSave:(id)sender
+{
+    if (inputViewField.text.length != 0) {
+        
+        NSMutableDictionary *dict = [activeArray[editRow] mutableCopy];
+        if (editType == 0) {
+            [dict setObject:inputViewField.text forKey:activeName];
+        }
+        else {
+            [dict setObject:inputViewField.text forKey:activeTime];
+        }
+        
+        [activeArray replaceObjectAtIndex:editRow withObject:dict];
+        
+        [settingTableView reloadData];
+    }
     
+    inputViewField.text = @"";
+    [alert removeAlert];
 }
 
 #pragma mark - UITableView Delegate & Datasource
@@ -179,7 +213,7 @@
     NSDictionary *dict = activeArray[indexPath .row];
     
     [cell.activeName setTitle:dict[activeName] forState:UIControlStateNormal];
-    [cell.activeTime setTitle:[dict[activeTime] stringByAppendingString:@"S"] forState:UIControlStateNormal];
+    [cell.activeTime setTitle:[dict[activeTime] stringByAppendingString:@"s"] forState:UIControlStateNormal];
     
     return cell;
 }

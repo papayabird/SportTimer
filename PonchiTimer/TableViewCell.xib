@@ -38,6 +38,10 @@
                 </subviews>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="activeName" destination="944-AM-HAj" id="x9W-wJ-wI5"/>
+                <outlet property="activeTime" destination="GpA-pf-GGF" id="4e2-ky-aEM"/>
+            </connections>
             <point key="canvasLocation" x="643" y="524"/>
         </tableViewCell>
     </objects>
