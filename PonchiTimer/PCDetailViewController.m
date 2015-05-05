@@ -12,6 +12,8 @@
 
 @interface PCDetailViewController ()
 
+@property (readwrite, nonatomic, strong) AVSpeechSynthesizer *speechSynthesizer;
+
 @end
 
 @implementation PCDetailViewController
@@ -76,9 +78,12 @@
     totalTimeLabel.text = [NSString stringWithFormat:@"%i : %i",min,sec];
     
     //初始化
-    count = 0;
-    sumSec = [activeArray[0][activeTime] intValue];
+    if ([activeArray count] > 0) {
+        count = 0;
+        sumSec = [activeArray[0][activeTime] intValue];
+    }
     
+    //聲音
     NSString *path2 = [[NSBundle mainBundle] pathForResource:@"mouse_click" ofType:@"mp3"];
     AVAudioPlayer *aPlayer2 = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path2] error:NULL];
     sound = aPlayer2;
@@ -102,7 +107,8 @@
         if (firstStart) {
             [self startTime];
             firstStart = NO;
-            [self.view makeToast:activeArray[count][activeName] duration:1 position:CSToastPositionCenter];
+//            [self.view makeToast:activeArray[count][activeName] duration:1 position:CSToastPositionCenter];
+            [self speakword:activeArray[count][activeName]];
         }
         else {
             [currentTimer setFireDate:[NSDate distantPast]];
@@ -118,13 +124,20 @@
     }
 }
 
+- (void)speakword:(NSString *)word
+{
+    speakVC = [[SpeechUtteranceViewController alloc] init];
+    [speakVC speakWord:word];
+}
+
 - (void)getTime
 {
     NSLog(@"sumSec = %i",sumSec);
     if (sumSec == currentTimeInt) {
         count++;
         sumSec += [activeArray[count][activeTime] intValue];
-        [self.view makeToast:activeArray[count][activeName] duration:1 position:CSToastPositionCenter];
+//        [self.view makeToast:activeArray[count][activeName] duration:1 position:CSToastPositionCenter];
+        [self speakword:activeArray[count][activeName]];
     }
     else {
         

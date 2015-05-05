@@ -76,7 +76,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMT-tS-ogb">
-                    <rect key="frame" x="159" y="80" width="3" height="96"/>
+                    <rect key="frame" x="160" y="80" width="3" height="96"/>
                     <color key="backgroundColor" red="0.97647064920000004" green="0.078431375319999996" blue="0.15686275059999999" alpha="1" colorSpace="deviceRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

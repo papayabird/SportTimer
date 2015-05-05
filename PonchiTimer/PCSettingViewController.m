@@ -23,14 +23,15 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
+    
     activeDict = [NSMutableDictionary dictionaryWithContentsOfFile:[[AppDelegate sharedAppDelegate] getActivePlistPath]];
     if (!activeDict) {
-        activeDict = [NSMutableDictionary dictionary];
+        activeDict = [[NSMutableDictionary alloc] init];
         [activeDict setObject:@{activeArrayStr:[NSMutableArray array],activeRepeatCount:@"1"} forKey:@"8M"];
         [activeDict setObject:@{activeArrayStr:[NSMutableArray array],activeRepeatCount:@"1"} forKey:@"5M"];
         [activeDict setObject:@{activeArrayStr:[NSMutableArray array],activeRepeatCount:@"1"} forKey:@"3M"];
     }
+    
     [self startAction:button8M];
     
     alert = [[IHAlertView alloc] init];

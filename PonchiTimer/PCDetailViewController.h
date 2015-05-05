@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
+#import "SpeechUtteranceViewController.h"
 
 @interface PCDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
@@ -31,6 +32,7 @@
     int count;
     int sumSec;
     AVAudioPlayer *sound;
+    SpeechUtteranceViewController *speakVC;
 }
 
 - (instancetype)initWithType:(PCStatusType)type;

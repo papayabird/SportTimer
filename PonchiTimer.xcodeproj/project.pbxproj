@@ -24,6 +24,7 @@
 		D0DFB92D1AF8AF540056D3F9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DFB92C1AF8AF540056D3F9 /* AVFoundation.framework */; };
 		D0DFB92F1AF8B28D0056D3F9 /* mouse_click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D0DFB92E1AF8B28D0056D3F9 /* mouse_click.mp3 */; };
 		D0DFB9321AF8B7040056D3F9 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DFB9311AF8B7040056D3F9 /* UIView+Toast.m */; };
+		D0DFB9351AF8BB020056D3F9 /* SpeechUtteranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DFB9341AF8BB020056D3F9 /* SpeechUtteranceViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		D0DFB92E1AF8B28D0056D3F9 /* mouse_click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mouse_click.mp3; sourceTree = "<group>"; };
 		D0DFB9301AF8B7040056D3F9 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		D0DFB9311AF8B7040056D3F9 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		D0DFB9331AF8BB020056D3F9 /* SpeechUtteranceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeechUtteranceViewController.h; sourceTree = "<group>"; };
+		D0DFB9341AF8BB020056D3F9 /* SpeechUtteranceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeechUtteranceViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 				D0DFB92E1AF8B28D0056D3F9 /* mouse_click.mp3 */,
 				D031ABA71AF79FA0009F3AC1 /* AppDelegate.h */,
 				D031ABA81AF79FA0009F3AC1 /* AppDelegate.m */,
+				D0DFB9331AF8BB020056D3F9 /* SpeechUtteranceViewController.h */,
+				D0DFB9341AF8BB020056D3F9 /* SpeechUtteranceViewController.m */,
 				D0DFB9301AF8B7040056D3F9 /* UIView+Toast.h */,
 				D0DFB9311AF8B7040056D3F9 /* UIView+Toast.m */,
 				D0DFB9291AF87EF70056D3F9 /* IHAlertView.h */,
@@ -267,6 +272,7 @@
 			files = (
 				D0DFB9321AF8B7040056D3F9 /* UIView+Toast.m in Sources */,
 				D031ABDE1AF7A740009F3AC1 /* TableViewCell.m in Sources */,
+				D0DFB9351AF8BB020056D3F9 /* SpeechUtteranceViewController.m in Sources */,
 				D031ABD11AF7A18E009F3AC1 /* PCDetailViewController.m in Sources */,
 				D031ABCC1AF7A023009F3AC1 /* PCRootViewController.m in Sources */,
 				D031ABA91AF79FA0009F3AC1 /* AppDelegate.m in Sources */,
@@ -380,7 +386,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = PonchiTimer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -390,7 +398,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = PonchiTimer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
