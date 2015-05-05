@@ -21,6 +21,8 @@
 		D031ABDE1AF7A740009F3AC1 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D031ABDC1AF7A740009F3AC1 /* TableViewCell.m */; };
 		D031ABDF1AF7A740009F3AC1 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D031ABDD1AF7A740009F3AC1 /* TableViewCell.xib */; };
 		D0DFB92B1AF87EF70056D3F9 /* IHAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DFB92A1AF87EF70056D3F9 /* IHAlertView.m */; };
+		D0DFB92D1AF8AF540056D3F9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DFB92C1AF8AF540056D3F9 /* AVFoundation.framework */; };
+		D0DFB92F1AF8B28D0056D3F9 /* mouse_click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D0DFB92E1AF8B28D0056D3F9 /* mouse_click.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		D031ABDD1AF7A740009F3AC1 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		D0DFB9291AF87EF70056D3F9 /* IHAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHAlertView.h; sourceTree = "<group>"; };
 		D0DFB92A1AF87EF70056D3F9 /* IHAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHAlertView.m; sourceTree = "<group>"; };
+		D0DFB92C1AF8AF540056D3F9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D0DFB92E1AF8B28D0056D3F9 /* mouse_click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mouse_click.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0DFB92D1AF8AF540056D3F9 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +87,7 @@
 		D031AB971AF79FA0009F3AC1 = {
 			isa = PBXGroup;
 			children = (
+				D0DFB92C1AF8AF540056D3F9 /* AVFoundation.framework */,
 				D031ABA21AF79FA0009F3AC1 /* PonchiTimer */,
 				D031ABBC1AF79FA0009F3AC1 /* PonchiTimerTests */,
 				D031ABA11AF79FA0009F3AC1 /* Products */,
@@ -100,6 +106,7 @@
 		D031ABA21AF79FA0009F3AC1 /* PonchiTimer */ = {
 			isa = PBXGroup;
 			children = (
+				D0DFB92E1AF8B28D0056D3F9 /* mouse_click.mp3 */,
 				D031ABA71AF79FA0009F3AC1 /* AppDelegate.h */,
 				D031ABA81AF79FA0009F3AC1 /* AppDelegate.m */,
 				D0DFB9291AF87EF70056D3F9 /* IHAlertView.h */,
@@ -233,6 +240,7 @@
 				D031ABD71AF7A19C009F3AC1 /* PCSettingViewController.xib in Resources */,
 				D031ABDF1AF7A740009F3AC1 /* TableViewCell.xib in Resources */,
 				D031ABD21AF7A18E009F3AC1 /* PCDetailViewController.xib in Resources */,
+				D0DFB92F1AF8B28D0056D3F9 /* mouse_click.mp3 in Resources */,
 				D031ABB11AF79FA0009F3AC1 /* Images.xcassets in Resources */,
 				D031ABCD1AF7A023009F3AC1 /* PCRootViewController.xib in Resources */,
 			);
