@@ -45,7 +45,7 @@
     
     //內文
     displayView = theView;
-    displayView.frame = CGRectMake((coverAllWindowView.frame.size.width - displayView.frame.size.width)/2, /*(coverAllWindowView.frame.size.height - displayView.frame.size.height)/2*/ 74, displayView.bounds.size.width, displayView.bounds.size.height);
+    displayView.frame = CGRectMake((coverAllWindowView.frame.size.width - displayView.frame.size.width)/2, /*(coverAllWindowView.frame.size.height - displayView.frame.size.height)/2*/ 127, displayView.bounds.size.width, displayView.bounds.size.height);
 
 //    displayView.layer.cornerRadius = 10;
 //    displayView.layer.masksToBounds = YES;

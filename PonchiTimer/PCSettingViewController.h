@@ -11,11 +11,18 @@
 #import "TableViewCell.h"
 #import "IHAlertView.h"
 
+typedef NS_ENUM(NSInteger, PCInputtype) {
+    PCInputtypeRepeatCount = 0,
+    PCInputtypeName = 1,
+    PCInputtypeTime = 2
+};
+
 @interface PCSettingViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, TableCellDelegate>
 
 {
     __weak IBOutlet UITableView *settingTableView;
     PCStatusType statusType;
+    PCInputtype inputType;
     NSMutableArray *activeArray;
     NSMutableDictionary *activeDict;
     IHAlertView *alert;
@@ -29,13 +36,15 @@
     __weak IBOutlet UILabel *totalTimeLabel;
     
     BOOL editBool;
-    int editType;
     int editRow;
     
     //inputView
     IBOutlet UIView *inputView;
     __weak IBOutlet UILabel *inputViewTitle;
     __weak IBOutlet UITextField *inputViewField;
+    
+    //repeatCount
+    int repeatCount;
     
 }
 

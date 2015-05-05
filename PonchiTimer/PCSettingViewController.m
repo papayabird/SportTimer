@@ -27,9 +27,9 @@
     activeDict = [NSMutableDictionary dictionaryWithContentsOfFile:[[AppDelegate sharedAppDelegate] getActivePlistPath]];
     if (!activeDict) {
         activeDict = [NSMutableDictionary dictionary];
-        [activeDict setObject:[NSMutableArray array] forKey:@"8M"];
-        [activeDict setObject:[NSMutableArray array] forKey:@"5M"];
-        [activeDict setObject:[NSMutableArray array] forKey:@"3M"];
+        [activeDict setObject:@{activeArrayStr:[NSMutableArray array],activeRepeatCount:@"1"} forKey:@"8M"];
+        [activeDict setObject:@{activeArrayStr:[NSMutableArray array],activeRepeatCount:@"1"} forKey:@"5M"];
+        [activeDict setObject:@{activeArrayStr:[NSMutableArray array],activeRepeatCount:@"1"} forKey:@"3M"];
     }
     [self startAction:button8M];
     
@@ -52,21 +52,26 @@
     switch (tag) {
         case 8:
             statusType = PCStatusType8M;
-            activeArray = activeDict[@"8M"];
+            activeArray = activeDict[@"8M"][activeArrayStr];
+            repeatCount = [activeDict[@"8M"][activeRepeatCount] intValue];
             break;
         case 5:
             statusType = PCStatusType5M;
-            activeArray = activeDict[@"5M"];
+            activeArray = activeDict[@"5M"][activeArrayStr];
+            repeatCount = [activeDict[@"5M"][activeRepeatCount] intValue];
             break;
         case 3:
             statusType = PCStatusType3M;
-            activeArray = activeDict[@"3M"];
+            activeArray = activeDict[@"3M"][activeArrayStr];
+            repeatCount = [activeDict[@"3M"][activeRepeatCount] intValue];
             break;
         default:
             break;
     }
     
-    [settingTableView reloadData];
+    [self reloadTimeLabel];
+    
+    [self reloadtableView];
 }
 
 - (IBAction)backAction:(id)sender
@@ -79,25 +84,61 @@
     }];
 }
 
+- (IBAction)repeatAction:(id)sender
+{
+    [alert displayViewAtCenter:inputView];
+    inputViewTitle.text = @"請輸入循環次數";
+    inputType = PCInputtypeRepeatCount;
+}
+
+- (void)reloadtableView
+{
+    [settingTableView reloadData];
+    [self reloadRepeatCountlabel];
+    [self reloadTimeLabel];
+}
+
+- (void)reloadTimeLabel
+{
+    int timeSum = 0;
+    
+    for (NSMutableDictionary *dict in activeArray) {
+        
+         timeSum += [dict[activeTime] intValue];
+    }
+    
+    int min = timeSum / 60;
+    int sec = timeSum % 60;
+    
+    totalTimeLabel.text = [NSString stringWithFormat:@"%i : %i",min,sec];
+}
+
+- (void)reloadRepeatCountlabel
+{
+    [repeatCountbutton setTitle:[NSString stringWithFormat:@"%i",repeatCount] forState:UIControlStateNormal];
+}
+
 - (void)saveData
 {
     //儲存
     switch (statusType) {
         case 8:
-            [activeDict setObject:activeArray forKey:@"8M"];
+            [activeDict[@"8M"] setObject:activeArray forKey:activeArrayStr];
+            [activeDict[@"8M"] setObject:repeatCountbutton.titleLabel.text forKey:activeRepeatCount];
             break;
         case 5:
-            [activeDict setObject:activeArray forKey:@"5M"];
+            [activeDict[@"5M"] setObject:activeArray forKey:activeArrayStr];
+            [activeDict[@"5M"] setObject:repeatCountbutton.titleLabel.text forKey:activeRepeatCount];
             break;
         case 3:
-            [activeDict setObject:activeArray forKey:@"3M"];
+            [activeDict[@"3M"] setObject:activeArray forKey:activeArrayStr];
+            [activeDict[@"3M"] setObject:repeatCountbutton.titleLabel.text forKey:activeRepeatCount];
             break;
         default:
             break;
     }
     
-    BOOL saveBool = [activeDict writeToFile:[[AppDelegate sharedAppDelegate] getActivePlistPath] atomically:YES];
-    
+    [activeDict writeToFile:[[AppDelegate sharedAppDelegate] getActivePlistPath] atomically:YES];
 }
 
 - (void)resetButtonType
@@ -116,7 +157,7 @@
 {
     [alert displayViewAtCenter:inputView];
     inputViewTitle.text = @"請輸入運動名稱";
-    editType = 0;
+    inputType = PCInputtypeName;
     editRow = indexPath;
 }
 
@@ -124,7 +165,7 @@
 {
     [alert displayViewAtCenter:inputView];
     inputViewTitle.text = @"請輸入運動時間";
-    editType = 1;
+    inputType = PCInputtypeTime;
     editRow = indexPath;
 }
 
@@ -138,17 +179,21 @@
 {
     if (inputViewField.text.length != 0) {
         
-        NSMutableDictionary *dict = [activeArray[editRow] mutableCopy];
-        if (editType == 0) {
+        if (inputType == PCInputtypeName) {
+            NSMutableDictionary *dict = [activeArray[editRow] mutableCopy];
             [dict setObject:inputViewField.text forKey:activeName];
+            [activeArray replaceObjectAtIndex:editRow withObject:dict];
+        }
+        else if (inputType == PCInputtypeTime) {
+            NSMutableDictionary *dict = [activeArray[editRow] mutableCopy];
+            [dict setObject:inputViewField.text forKey:activeTime];
+            [activeArray replaceObjectAtIndex:editRow withObject:dict];
         }
         else {
-            [dict setObject:inputViewField.text forKey:activeTime];
+            repeatCount = [inputViewField.text intValue];
+            
         }
-        
-        [activeArray replaceObjectAtIndex:editRow withObject:dict];
-        
-        [settingTableView reloadData];
+        [self reloadtableView];
     }
     
     inputViewField.text = @"";
@@ -229,7 +274,7 @@
         
         [activeArray removeObjectAtIndex:indexPath.row];
         
-        [settingTableView reloadData];
+        [self reloadtableView];
     }
 
 }
@@ -241,7 +286,8 @@
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
-    //Even if the method is empty you should be seeing both rearrangement icon and animation.
+
+
 }
 
 - (void)addRowAction
@@ -250,19 +296,23 @@
     [dict setObject:@"運動" forKey:activeName];
     [dict setObject:@"0" forKey:activeTime];
     [activeArray addObject:dict];
-    [settingTableView reloadData];
+    [self reloadtableView];
 }
 
 - (void)deleteAction:(UIButton *)button
 {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"此功能尚未開放" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alertView show];
+    return;
+    
     if (!editBool) {
         [settingTableView setEditing:YES animated:YES];
-        [settingTableView reloadData];
+        [self reloadtableView];
         editBool = YES;
     }
     else {
         [settingTableView setEditing:NO animated:YES];
-        [settingTableView reloadData];
+        [self reloadtableView];
         editBool = NO;
     }
 

@@ -13,9 +13,11 @@ typedef NS_ENUM(NSInteger, PCStatusType) {
     PCStatusType5M = 5,
     PCStatusType3M = 3
 };
-
+static NSString *const activeArrayStr = @"activeArrayStr";
+static NSString *const activeRepeatCount = @"activeRepeatCount";
 static NSString *const activeName = @"activeName";
 static NSString *const activeTime = @"activeTime";
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
