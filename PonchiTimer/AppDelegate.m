@@ -34,7 +34,7 @@
 
 - (NSString *)getActivePlistPath
 {
-    NSString *Path = [NSHomeDirectory() stringByAppendingPathComponent:@"ActiveDir"];
+    NSString *Path = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"ActiveDir"];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     

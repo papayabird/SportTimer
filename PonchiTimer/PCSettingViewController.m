@@ -27,9 +27,13 @@
     activeDict = [NSMutableDictionary dictionaryWithContentsOfFile:[[AppDelegate sharedAppDelegate] getActivePlistPath]];
     if (!activeDict) {
         activeDict = [[NSMutableDictionary alloc] init];
-        [activeDict setObject:@{activeArrayStr:[NSMutableArray array],activeRepeatCount:@"1"} forKey:@"8M"];
-        [activeDict setObject:@{activeArrayStr:[NSMutableArray array],activeRepeatCount:@"1"} forKey:@"5M"];
-        [activeDict setObject:@{activeArrayStr:[NSMutableArray array],activeRepeatCount:@"1"} forKey:@"3M"];
+        NSArray *array = [NSArray arrayWithObjects:@"8M",@"5M",@"3M", nil];
+        for (int i = 0; i < 3; i++) {
+            NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+            [dict setObject:[NSMutableArray array] forKey:activeArrayStr];
+            [dict setObject:@"1" forKey:activeRepeatCount];
+            [activeDict setObject:dict forKey:array[i]];
+        }
     }
     
     [self startAction:button8M];
@@ -139,7 +143,7 @@
             break;
     }
     
-    [activeDict writeToFile:[[AppDelegate sharedAppDelegate] getActivePlistPath] atomically:YES];
+    BOOL is = [activeDict writeToFile:[[AppDelegate sharedAppDelegate] getActivePlistPath] atomically:YES];
 }
 
 - (void)resetButtonType

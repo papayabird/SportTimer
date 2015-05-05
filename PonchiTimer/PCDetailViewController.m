@@ -58,6 +58,10 @@
             break;
     }
     
+    if ([activeArray count] == 0) {
+        return;
+    }
+    
     //加總重複次數
     NSMutableArray *copyArray = [activeArray copy];
     for (int i = 0; i < repeatCount - 1; i++) {
@@ -78,10 +82,9 @@
     totalTimeLabel.text = [NSString stringWithFormat:@"%i : %i",min,sec];
     
     //初始化
-    if ([activeArray count] > 0) {
-        count = 0;
-        sumSec = [activeArray[0][activeTime] intValue];
-    }
+    count = 0;
+    sumSec = [activeArray[0][activeTime] intValue];
+    
     
     //聲音
     NSString *path2 = [[NSBundle mainBundle] pathForResource:@"mouse_click" ofType:@"mp3"];
