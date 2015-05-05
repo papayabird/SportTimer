@@ -110,7 +110,6 @@
         if (firstStart) {
             [self startTime];
             firstStart = NO;
-//            [self.view makeToast:activeArray[count][activeName] duration:1 position:CSToastPositionCenter];
             [self speakword:activeArray[count][activeName]];
         }
         else {
@@ -133,32 +132,36 @@
     [speakVC speakWord:word];
 }
 
-- (void)getTime
+- (BOOL)getTime
 {
     NSLog(@"sumSec = %i",sumSec);
     if (sumSec == currentTimeInt) {
         count++;
         sumSec += [activeArray[count][activeTime] intValue];
-//        [self.view makeToast:activeArray[count][activeName] duration:1 position:CSToastPositionCenter];
         [self speakword:activeArray[count][activeName]];
+        
+        return YES;
     }
     else {
         
     }
+    
+    return NO;
 }
 
 - (void)startTime
 {
     currentTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(currentTime) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:currentTimer forMode:NSRunLoopCommonModes];
 }
 
 - (void)currentTime
 {
-    [sound play];
-
     currentTimeInt++;
     
-    [self getTime];
+    if (![self getTime]) {
+        [sound play];
+    }
     
     int min = currentTimeInt / 60;
     int sec = currentTimeInt % 60;

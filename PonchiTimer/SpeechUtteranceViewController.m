@@ -244,8 +244,8 @@ static NSString * BCP47LanguageCodeForString(NSString *string) {
 
     //utterance.pitchMultiplier = 0.5f;
     utterance.rate = AVSpeechUtteranceMinimumSpeechRate;
-    utterance.preUtteranceDelay = 0.3f;
-    utterance.postUtteranceDelay = 0.3f;
+    utterance.preUtteranceDelay = 0.1f;
+    utterance.postUtteranceDelay = 0.1f;
     
     [self.speechSynthesizer speakUtterance:utterance];
 }
