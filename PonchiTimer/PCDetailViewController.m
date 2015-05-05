@@ -136,9 +136,15 @@
 {
     NSLog(@"sumSec = %i",sumSec);
     if (sumSec == currentTimeInt) {
-        count++;
-        sumSec += [activeArray[count][activeTime] intValue];
-        [self speakword:activeArray[count][activeName]];
+        
+        if (count == [activeArray count] - 1) {
+            
+        }
+        else {
+            count++;
+            sumSec += [activeArray[count][activeTime] intValue];
+            [self speakword:activeArray[count][activeName]];
+        }
         
         return YES;
     }
@@ -170,7 +176,24 @@
     
     if ([totalTimeLabel.text isEqualToString:currentTimeLabel.text]) {
         
+        int finishedCount = [[[NSUserDefaults standardUserDefaults] objectForKey:FinishedUserDefaults] intValue];
+        finishedCount++;
+        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%i",finishedCount] forKey:FinishedUserDefaults];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         [currentTimer invalidate];
+        
+        NSString *str = @"";
+        if (finishedCount%10 == 0) {
+            str = [NSString stringWithFormat:@"已經完成了%i次了喔！",finishedCount];
+
+        }else {
+            str = @"何不再一次呢肥子!";
+        }
+
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"恭喜完成!" message:str delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        
+        [self backAction:nil];
     }
 }
 

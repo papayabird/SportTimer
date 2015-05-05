@@ -18,6 +18,8 @@ static NSString *const activeRepeatCount = @"activeRepeatCount";
 static NSString *const activeName = @"activeName";
 static NSString *const activeTime = @"activeTime";
 
+static NSString *const FinishedUserDefaults = @"FinishedUserDefaults";
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

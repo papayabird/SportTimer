@@ -53,6 +53,35 @@
     }];
 }
 
+- (void)setLocalNotification
+{
+    NSDate *pushDate = [NSDate dateWithTimeIntervalSinceNow:3600];
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+
+    if (notification != nil) {
+        // 设置推送时间
+        notification.fireDate = pushDate;
+        // 设置时区
+        notification.timeZone = [NSTimeZone defaultTimeZone];
+        // 设置重复间隔 每天
+        notification.repeatInterval = kCFCalendarUnitDay;
+        // 推送声音
+        notification.soundName = UILocalNotificationDefaultSoundName;
+        // 推送内容
+        notification.alertBody = @"是不想瘦了嗎肥子！";
+        //显示在icon上的红色圈中的数子
+        notification.applicationIconBadgeNumber = 1;
+        //设置userinfo 方便在之后需要撤销的时候使用
+        NSDictionary *info = [NSDictionary dictionaryWithObject:@"name"forKey:@"key"];
+        notification.userInfo = info;
+        //添加推送到UIApplication
+        UIApplication *app = [UIApplication sharedApplication];
+        //立即推送用 [app presentLocalNotificationNow:notification];
+        [app scheduleLocalNotification:notification];
+    }
+
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

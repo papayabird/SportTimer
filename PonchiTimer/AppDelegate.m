@@ -32,6 +32,21 @@
     return YES;
 }
 
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notif
+{
+    if(application.applicationState == UIApplicationStateActive) {
+        
+    }
+    
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:@"準備燃燒你的脂肪吧！"
+                              message:nil
+                              delegate:self
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
 - (NSString *)getActivePlistPath
 {
     NSString *Path = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"ActiveDir"];
