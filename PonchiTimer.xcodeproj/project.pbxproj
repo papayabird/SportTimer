@@ -23,6 +23,7 @@
 		D0DFB92B1AF87EF70056D3F9 /* IHAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DFB92A1AF87EF70056D3F9 /* IHAlertView.m */; };
 		D0DFB92D1AF8AF540056D3F9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DFB92C1AF8AF540056D3F9 /* AVFoundation.framework */; };
 		D0DFB92F1AF8B28D0056D3F9 /* mouse_click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D0DFB92E1AF8B28D0056D3F9 /* mouse_click.mp3 */; };
+		D0DFB9321AF8B7040056D3F9 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DFB9311AF8B7040056D3F9 /* UIView+Toast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		D0DFB92A1AF87EF70056D3F9 /* IHAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHAlertView.m; sourceTree = "<group>"; };
 		D0DFB92C1AF8AF540056D3F9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D0DFB92E1AF8B28D0056D3F9 /* mouse_click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mouse_click.mp3; sourceTree = "<group>"; };
+		D0DFB9301AF8B7040056D3F9 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		D0DFB9311AF8B7040056D3F9 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				D0DFB92E1AF8B28D0056D3F9 /* mouse_click.mp3 */,
 				D031ABA71AF79FA0009F3AC1 /* AppDelegate.h */,
 				D031ABA81AF79FA0009F3AC1 /* AppDelegate.m */,
+				D0DFB9301AF8B7040056D3F9 /* UIView+Toast.h */,
+				D0DFB9311AF8B7040056D3F9 /* UIView+Toast.m */,
 				D0DFB9291AF87EF70056D3F9 /* IHAlertView.h */,
 				D0DFB92A1AF87EF70056D3F9 /* IHAlertView.m */,
 				D031ABD81AF7A4C1009F3AC1 /* UIButton+style.h */,
@@ -260,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0DFB9321AF8B7040056D3F9 /* UIView+Toast.m in Sources */,
 				D031ABDE1AF7A740009F3AC1 /* TableViewCell.m in Sources */,
 				D031ABD11AF7A18E009F3AC1 /* PCDetailViewController.m in Sources */,
 				D031ABCC1AF7A023009F3AC1 /* PCRootViewController.m in Sources */,

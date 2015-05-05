@@ -8,6 +8,7 @@
 
 #import "PCDetailViewController.h"
 #import "TableViewCell.h"
+#import "UIView+Toast.h"
 
 @interface PCDetailViewController ()
 
@@ -74,6 +75,10 @@
     
     totalTimeLabel.text = [NSString stringWithFormat:@"%i : %i",min,sec];
     
+    //初始化
+    count = 0;
+    sumSec = [activeArray[0][activeTime] intValue];
+    
     NSString *path2 = [[NSBundle mainBundle] pathForResource:@"mouse_click" ofType:@"mp3"];
     AVAudioPlayer *aPlayer2 = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path2] error:NULL];
     sound = aPlayer2;
@@ -82,9 +87,6 @@
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    [timer invalidate];
-    timer = nil;
-    
     [currentTimer invalidate];
     currentTimer = nil;
     
@@ -98,12 +100,11 @@
         //開始
         
         if (firstStart) {
-            [self getTime];
             [self startTime];
             firstStart = NO;
+            [self.view makeToast:activeArray[count][activeName] duration:1 position:CSToastPositionCenter];
         }
         else {
-            [timer setFireDate:[NSDate distantPast]];
             [currentTimer setFireDate:[NSDate distantPast]];
         }
         
@@ -112,7 +113,6 @@
         sender.selected = NO;
         //暫停
         
-        [timer setFireDate:[NSDate distantFuture]];
         [currentTimer setFireDate:[NSDate distantFuture]];
 
     }
@@ -120,39 +120,39 @@
 
 - (void)getTime
 {
-    [timer invalidate];
-    timer = nil;
-    
-    int time = 0;
-    if ([activeArray count] > count) {
-        
-        time = [activeArray[count][activeTime] intValue];
+    NSLog(@"sumSec = %i",sumSec);
+    if (sumSec == currentTimeInt) {
         count++;
-        timer = [NSTimer scheduledTimerWithTimeInterval:time target:self selector:@selector(getTime) userInfo:nil repeats:NO];
+        sumSec += [activeArray[count][activeTime] intValue];
+        [self.view makeToast:activeArray[count][activeName] duration:1 position:CSToastPositionCenter];
     }
     else {
         
     }
-    
 }
 
 - (void)startTime
 {
-    currentTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(currentTime) userInfo:nil repeats:YES];
+    currentTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(currentTime) userInfo:nil repeats:YES];
 }
 
 - (void)currentTime
 {
-    
     [sound play];
 
     currentTimeInt++;
+    
+    [self getTime];
     
     int min = currentTimeInt / 60;
     int sec = currentTimeInt % 60;
     
     currentTimeLabel.text = [NSString stringWithFormat:@"%i : %i",min,sec];
     
+    if ([totalTimeLabel.text isEqualToString:currentTimeLabel.text]) {
+        
+        [currentTimer invalidate];
+    }
 }
 
 #pragma mark - UITableView Delegate & Datasource

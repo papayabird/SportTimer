@@ -24,13 +24,12 @@
     int repeatCount;
 
     __weak IBOutlet UIButton *startButton;
-    NSTimer *timer;
     NSTimer *currentTimer;
     int currentTimeInt;
 
     BOOL firstStart;
     int count;
-    
+    int sumSec;
     AVAudioPlayer *sound;
 }
 
