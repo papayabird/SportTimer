@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D031ABA61AF79FA0009F3AC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D031ABA51AF79FA0009F3AC1 /* main.m */; };
+		D031ABA91AF79FA0009F3AC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D031ABA81AF79FA0009F3AC1 /* AppDelegate.m */; };
+		D031ABB11AF79FA0009F3AC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D031ABB01AF79FA0009F3AC1 /* Images.xcassets */; };
+		D031ABC01AF79FA0009F3AC1 /* PonchiTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D031ABBF1AF79FA0009F3AC1 /* PonchiTimerTests.m */; };
+		D031ABCC1AF7A023009F3AC1 /* PCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D031ABCA1AF7A023009F3AC1 /* PCRootViewController.m */; };
+		D031ABCD1AF7A023009F3AC1 /* PCRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D031ABCB1AF7A023009F3AC1 /* PCRootViewController.xib */; };
+		D031ABD11AF7A18E009F3AC1 /* PCDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D031ABCF1AF7A18E009F3AC1 /* PCDetailViewController.m */; };
+		D031ABD21AF7A18E009F3AC1 /* PCDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D031ABD01AF7A18E009F3AC1 /* PCDetailViewController.xib */; };
+		D031ABD61AF7A19C009F3AC1 /* PCSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D031ABD41AF7A19C009F3AC1 /* PCSettingViewController.m */; };
+		D031ABD71AF7A19C009F3AC1 /* PCSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D031ABD51AF7A19C009F3AC1 /* PCSettingViewController.xib */; };
+		D031ABDA1AF7A4C1009F3AC1 /* UIButton+style.m in Sources */ = {isa = PBXBuildFile; fileRef = D031ABD91AF7A4C1009F3AC1 /* UIButton+style.m */; };
+		D031ABDE1AF7A740009F3AC1 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D031ABDC1AF7A740009F3AC1 /* TableViewCell.m */; };
+		D031ABDF1AF7A740009F3AC1 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D031ABDD1AF7A740009F3AC1 /* TableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D031ABBA1AF79FA0009F3AC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D031AB981AF79FA0009F3AC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D031AB9F1AF79FA0009F3AC1;
+			remoteInfo = PonchiTimer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D031ABA01AF79FA0009F3AC1 /* PonchiTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PonchiTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D031ABA41AF79FA0009F3AC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D031ABA51AF79FA0009F3AC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D031ABA71AF79FA0009F3AC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D031ABA81AF79FA0009F3AC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D031ABB01AF79FA0009F3AC1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D031ABB91AF79FA0009F3AC1 /* PonchiTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PonchiTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D031ABBE1AF79FA0009F3AC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D031ABBF1AF79FA0009F3AC1 /* PonchiTimerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PonchiTimerTests.m; sourceTree = "<group>"; };
+		D031ABC91AF7A023009F3AC1 /* PCRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCRootViewController.h; sourceTree = "<group>"; };
+		D031ABCA1AF7A023009F3AC1 /* PCRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCRootViewController.m; sourceTree = "<group>"; };
+		D031ABCB1AF7A023009F3AC1 /* PCRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PCRootViewController.xib; sourceTree = "<group>"; };
+		D031ABCE1AF7A18E009F3AC1 /* PCDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCDetailViewController.h; sourceTree = "<group>"; };
+		D031ABCF1AF7A18E009F3AC1 /* PCDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCDetailViewController.m; sourceTree = "<group>"; };
+		D031ABD01AF7A18E009F3AC1 /* PCDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PCDetailViewController.xib; sourceTree = "<group>"; };
+		D031ABD31AF7A19C009F3AC1 /* PCSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCSettingViewController.h; sourceTree = "<group>"; };
+		D031ABD41AF7A19C009F3AC1 /* PCSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCSettingViewController.m; sourceTree = "<group>"; };
+		D031ABD51AF7A19C009F3AC1 /* PCSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PCSettingViewController.xib; sourceTree = "<group>"; };
+		D031ABD81AF7A4C1009F3AC1 /* UIButton+style.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+style.h"; sourceTree = "<group>"; };
+		D031ABD91AF7A4C1009F3AC1 /* UIButton+style.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+style.m"; sourceTree = "<group>"; };
+		D031ABDB1AF7A740009F3AC1 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		D031ABDC1AF7A740009F3AC1 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		D031ABDD1AF7A740009F3AC1 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D031AB9D1AF79FA0009F3AC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D031ABB61AF79FA0009F3AC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D031AB971AF79FA0009F3AC1 = {
+			isa = PBXGroup;
+			children = (
+				D031ABA21AF79FA0009F3AC1 /* PonchiTimer */,
+				D031ABBC1AF79FA0009F3AC1 /* PonchiTimerTests */,
+				D031ABA11AF79FA0009F3AC1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D031ABA11AF79FA0009F3AC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D031ABA01AF79FA0009F3AC1 /* PonchiTimer.app */,
+				D031ABB91AF79FA0009F3AC1 /* PonchiTimerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D031ABA21AF79FA0009F3AC1 /* PonchiTimer */ = {
+			isa = PBXGroup;
+			children = (
+				D031ABA71AF79FA0009F3AC1 /* AppDelegate.h */,
+				D031ABA81AF79FA0009F3AC1 /* AppDelegate.m */,
+				D031ABD81AF7A4C1009F3AC1 /* UIButton+style.h */,
+				D031ABD91AF7A4C1009F3AC1 /* UIButton+style.m */,
+				D031ABC91AF7A023009F3AC1 /* PCRootViewController.h */,
+				D031ABCA1AF7A023009F3AC1 /* PCRootViewController.m */,
+				D031ABCB1AF7A023009F3AC1 /* PCRootViewController.xib */,
+				D031ABCE1AF7A18E009F3AC1 /* PCDetailViewController.h */,
+				D031ABCF1AF7A18E009F3AC1 /* PCDetailViewController.m */,
+				D031ABD01AF7A18E009F3AC1 /* PCDetailViewController.xib */,
+				D031ABD31AF7A19C009F3AC1 /* PCSettingViewController.h */,
+				D031ABD41AF7A19C009F3AC1 /* PCSettingViewController.m */,
+				D031ABD51AF7A19C009F3AC1 /* PCSettingViewController.xib */,
+				D031ABDB1AF7A740009F3AC1 /* TableViewCell.h */,
+				D031ABDC1AF7A740009F3AC1 /* TableViewCell.m */,
+				D031ABDD1AF7A740009F3AC1 /* TableViewCell.xib */,
+				D031ABB01AF79FA0009F3AC1 /* Images.xcassets */,
+				D031ABA31AF79FA0009F3AC1 /* Supporting Files */,
+			);
+			path = PonchiTimer;
+			sourceTree = "<group>";
+		};
+		D031ABA31AF79FA0009F3AC1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D031ABA41AF79FA0009F3AC1 /* Info.plist */,
+				D031ABA51AF79FA0009F3AC1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D031ABBC1AF79FA0009F3AC1 /* PonchiTimerTests */ = {
+			isa = PBXGroup;
+			children = (
+				D031ABBF1AF79FA0009F3AC1 /* PonchiTimerTests.m */,
+				D031ABBD1AF79FA0009F3AC1 /* Supporting Files */,
+			);
+			path = PonchiTimerTests;
+			sourceTree = "<group>";
+		};
+		D031ABBD1AF79FA0009F3AC1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D031ABBE1AF79FA0009F3AC1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D031AB9F1AF79FA0009F3AC1 /* PonchiTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D031ABC31AF79FA0009F3AC1 /* Build configuration list for PBXNativeTarget "PonchiTimer" */;
+			buildPhases = (
+				D031AB9C1AF79FA0009F3AC1 /* Sources */,
+				D031AB9D1AF79FA0009F3AC1 /* Frameworks */,
+				D031AB9E1AF79FA0009F3AC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PonchiTimer;
+			productName = PonchiTimer;
+			productReference = D031ABA01AF79FA0009F3AC1 /* PonchiTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D031ABB81AF79FA0009F3AC1 /* PonchiTimerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D031ABC61AF79FA0009F3AC1 /* Build configuration list for PBXNativeTarget "PonchiTimerTests" */;
+			buildPhases = (
+				D031ABB51AF79FA0009F3AC1 /* Sources */,
+				D031ABB61AF79FA0009F3AC1 /* Frameworks */,
+				D031ABB71AF79FA0009F3AC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D031ABBB1AF79FA0009F3AC1 /* PBXTargetDependency */,
+			);
+			name = PonchiTimerTests;
+			productName = PonchiTimerTests;
+			productReference = D031ABB91AF79FA0009F3AC1 /* PonchiTimerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D031AB981AF79FA0009F3AC1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = papayabird;
+				TargetAttributes = {
+					D031AB9F1AF79FA0009F3AC1 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					D031ABB81AF79FA0009F3AC1 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = D031AB9F1AF79FA0009F3AC1;
+					};
+				};
+			};
+			buildConfigurationList = D031AB9B1AF79FA0009F3AC1 /* Build configuration list for PBXProject "PonchiTimer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D031AB971AF79FA0009F3AC1;
+			productRefGroup = D031ABA11AF79FA0009F3AC1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D031AB9F1AF79FA0009F3AC1 /* PonchiTimer */,
+				D031ABB81AF79FA0009F3AC1 /* PonchiTimerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D031AB9E1AF79FA0009F3AC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D031ABD71AF7A19C009F3AC1 /* PCSettingViewController.xib in Resources */,
+				D031ABDF1AF7A740009F3AC1 /* TableViewCell.xib in Resources */,
+				D031ABD21AF7A18E009F3AC1 /* PCDetailViewController.xib in Resources */,
+				D031ABB11AF79FA0009F3AC1 /* Images.xcassets in Resources */,
+				D031ABCD1AF7A023009F3AC1 /* PCRootViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D031ABB71AF79FA0009F3AC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D031AB9C1AF79FA0009F3AC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D031ABDE1AF7A740009F3AC1 /* TableViewCell.m in Sources */,
+				D031ABD11AF7A18E009F3AC1 /* PCDetailViewController.m in Sources */,
+				D031ABCC1AF7A023009F3AC1 /* PCRootViewController.m in Sources */,
+				D031ABA91AF79FA0009F3AC1 /* AppDelegate.m in Sources */,
+				D031ABD61AF7A19C009F3AC1 /* PCSettingViewController.m in Sources */,
+				D031ABA61AF79FA0009F3AC1 /* main.m in Sources */,
+				D031ABDA1AF7A4C1009F3AC1 /* UIButton+style.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D031ABB51AF79FA0009F3AC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D031ABC01AF79FA0009F3AC1 /* PonchiTimerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D031ABBB1AF79FA0009F3AC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D031AB9F1AF79FA0009F3AC1 /* PonchiTimer */;
+			targetProxy = D031ABBA1AF79FA0009F3AC1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D031ABC11AF79FA0009F3AC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D031ABC21AF79FA0009F3AC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D031ABC41AF79FA0009F3AC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PonchiTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D031ABC51AF79FA0009F3AC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PonchiTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D031ABC71AF79FA0009F3AC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PonchiTimerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PonchiTimer.app/PonchiTimer";
+			};
+			name = Debug;
+		};
+		D031ABC81AF79FA0009F3AC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PonchiTimerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PonchiTimer.app/PonchiTimer";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D031AB9B1AF79FA0009F3AC1 /* Build configuration list for PBXProject "PonchiTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D031ABC11AF79FA0009F3AC1 /* Debug */,
+				D031ABC21AF79FA0009F3AC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D031ABC31AF79FA0009F3AC1 /* Build configuration list for PBXNativeTarget "PonchiTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D031ABC41AF79FA0009F3AC1 /* Debug */,
+				D031ABC51AF79FA0009F3AC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D031ABC61AF79FA0009F3AC1 /* Build configuration list for PBXNativeTarget "PonchiTimerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D031ABC71AF79FA0009F3AC1 /* Debug */,
+				D031ABC81AF79FA0009F3AC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D031AB981AF79FA0009F3AC1 /* Project object */;
+}
