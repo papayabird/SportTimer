@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
-@interface PCRootViewController : UIViewController
+#import "PCBasicViewController.h"
+@interface PCRootViewController : PCBasicViewController
 
 {
     PCStatusType statusType;

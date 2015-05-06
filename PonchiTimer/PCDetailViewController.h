@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
 #import "SpeechUtteranceViewController.h"
+#import "PCBasicViewController.h"
 
-@interface PCDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface PCDetailViewController : PCBasicViewController <UITableViewDataSource, UITableViewDelegate>
 
 {
     PCStatusType statusType;

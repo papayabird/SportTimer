@@ -7,17 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
 #import "TableViewCell.h"
 #import "IHAlertView.h"
-
+#import "PCBasicViewController.h"
 typedef NS_ENUM(NSInteger, PCInputtype) {
     PCInputtypeRepeatCount = 0,
     PCInputtypeName = 1,
     PCInputtypeTime = 2
 };
 
-@interface PCSettingViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, TableCellDelegate>
+@interface PCSettingViewController : PCBasicViewController <UITableViewDataSource, UITableViewDelegate, TableCellDelegate>
 
 {
     __weak IBOutlet UITableView *settingTableView;

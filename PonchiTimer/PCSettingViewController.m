@@ -7,7 +7,6 @@
 //
 
 #import "PCSettingViewController.h"
-#import "AppDelegate.h"
 
 @interface PCSettingViewController ()
 
@@ -306,8 +305,7 @@
 
 - (void)deleteAction:(UIButton *)button
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"此功能尚未開放" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alertView show];
+    YKSimpleAlert(@"此功能尚未開放");
     return;
     
     if (!editBool) {

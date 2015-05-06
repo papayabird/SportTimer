@@ -9,6 +9,7 @@
 #import "PCDetailViewController.h"
 #import "TableViewCell.h"
 #import "UIView+Toast.h"
+#import <YKFoundation3/YKFoundation3.h>
 
 @interface PCDetailViewController ()
 
@@ -103,6 +104,18 @@
 
 - (IBAction)startAction:(UIButton *)sender
 {
+    //如果沒有設定排程就擋掉
+    if ([activeArray count] == 0) {
+        
+        [YKBlockAlert alertWithTitle:@"請先設定排程" message:nil blocksAndButtons:^{
+            
+            [self.navigationController popViewControllerAnimated:YES];
+            
+        }, @"OK",nil];
+        
+        return;
+    }
+    
     if (!sender.selected) {
         sender.selected = YES;
         //開始
@@ -189,9 +202,8 @@
         }else {
             str = @"何不再一次呢肥子!";
         }
-
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"恭喜完成!" message:str delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alertView show];
+        
+        YKSimpleAlert(str);
         
         [self backAction:nil];
     }
