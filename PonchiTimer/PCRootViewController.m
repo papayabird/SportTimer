@@ -25,14 +25,14 @@
     int tag = (int)[sender tag];
     
     switch (tag) {
-        case 8:
-            statusType = PCStatusType8M;
+        case 1:
+            statusType = PCStatusTypeMode1;
             break;
-        case 5:
-            statusType = PCStatusType5M;
+        case 2:
+            statusType = PCStatusTypeMode2;
             break;
         case 3:
-            statusType = PCStatusType3M;
+            statusType = PCStatusTypeMode3;
             break;
         default:
             break;

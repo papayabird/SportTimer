@@ -40,20 +40,20 @@
     activeDict = [NSMutableDictionary dictionaryWithContentsOfFile:[[AppDelegate sharedAppDelegate] getActivePlistPath]];
     
     switch (statusType) {
-        case 8:
-            statusType = PCStatusType8M;
-            activeArray = activeDict[@"8M"][activeArrayStr];
-            repeatCount = [activeDict[@"8M"][activeRepeatCount] intValue];
+        case 1:
+            statusType = PCStatusTypeMode1;
+            activeArray = activeDict[@"mode1"][activeArrayStr];
+            repeatCount = [activeDict[@"mode1"][activeRepeatCount] intValue];
             break;
-        case 5:
-            statusType = PCStatusType5M;
-            activeArray = activeDict[@"5M"][activeArrayStr];
-            repeatCount = [activeDict[@"5M"][activeRepeatCount] intValue];
+        case 2:
+            statusType = PCStatusTypeMode2;
+            activeArray = activeDict[@"mode2"][activeArrayStr];
+            repeatCount = [activeDict[@"mode2"][activeRepeatCount] intValue];
             break;
         case 3:
-            statusType = PCStatusType3M;
-            activeArray = activeDict[@"3M"][activeArrayStr];
-            repeatCount = [activeDict[@"3M"][activeRepeatCount] intValue];
+            statusType = PCStatusTypeMode3;
+            activeArray = activeDict[@"mode3"][activeArrayStr];
+            repeatCount = [activeDict[@"mode3"][activeRepeatCount] intValue];
             break;
         default:
             break;

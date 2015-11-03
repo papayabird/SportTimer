@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, PCStatusType) {
-    PCStatusType8M = 8,
-    PCStatusType5M = 5,
-    PCStatusType3M = 3
+    PCStatusTypeMode1 = 1,
+    PCStatusTypeMode2 = 2,
+    PCStatusTypeMode3 = 3
 };
 static NSString *const activeArrayStr = @"activeArrayStr";
 static NSString *const activeRepeatCount = @"activeRepeatCount";

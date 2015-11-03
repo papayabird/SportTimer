@@ -26,7 +26,7 @@
     activeDict = [NSMutableDictionary dictionaryWithContentsOfFile:[[AppDelegate sharedAppDelegate] getActivePlistPath]];
     if (!activeDict) {
         activeDict = [[NSMutableDictionary alloc] init];
-        NSArray *array = [NSArray arrayWithObjects:@"8M",@"5M",@"3M", nil];
+        NSArray *array = [NSArray arrayWithObjects:@"mode1",@"mode2",@"mode3", nil];
         for (int i = 0; i < 3; i++) {
             NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
             [dict setObject:[NSMutableArray array] forKey:activeArrayStr];
@@ -54,20 +54,20 @@
     btn.titleLabel.textColor = [UIColor blackColor];
     
     switch (tag) {
-        case 8:
-            statusType = PCStatusType8M;
-            activeArray = activeDict[@"8M"][activeArrayStr];
-            repeatCount = [activeDict[@"8M"][activeRepeatCount] intValue];
+        case 1:
+            statusType = PCStatusTypeMode1;
+            activeArray = activeDict[@"mode1"][activeArrayStr];
+            repeatCount = [activeDict[@"mode1"][activeRepeatCount] intValue];
             break;
-        case 5:
-            statusType = PCStatusType5M;
-            activeArray = activeDict[@"5M"][activeArrayStr];
-            repeatCount = [activeDict[@"5M"][activeRepeatCount] intValue];
+        case 2:
+            statusType = PCStatusTypeMode2;
+            activeArray = activeDict[@"mode2"][activeArrayStr];
+            repeatCount = [activeDict[@"mode2"][activeRepeatCount] intValue];
             break;
         case 3:
-            statusType = PCStatusType3M;
-            activeArray = activeDict[@"3M"][activeArrayStr];
-            repeatCount = [activeDict[@"3M"][activeRepeatCount] intValue];
+            statusType = PCStatusTypeMode3;
+            activeArray = activeDict[@"mode3"][activeArrayStr];
+            repeatCount = [activeDict[@"mode3"][activeRepeatCount] intValue];
             break;
         default:
             break;
@@ -126,17 +126,17 @@
 {
     //儲存
     switch (statusType) {
-        case 8:
-            [activeDict[@"8M"] setObject:activeArray forKey:activeArrayStr];
-            [activeDict[@"8M"] setObject:repeatCountbutton.titleLabel.text forKey:activeRepeatCount];
+        case 1:
+            [activeDict[@"mode1"] setObject:activeArray forKey:activeArrayStr];
+            [activeDict[@"mode1"] setObject:repeatCountbutton.titleLabel.text forKey:activeRepeatCount];
             break;
-        case 5:
-            [activeDict[@"5M"] setObject:activeArray forKey:activeArrayStr];
-            [activeDict[@"5M"] setObject:repeatCountbutton.titleLabel.text forKey:activeRepeatCount];
+        case 2:
+            [activeDict[@"mode2"] setObject:activeArray forKey:activeArrayStr];
+            [activeDict[@"mode2"] setObject:repeatCountbutton.titleLabel.text forKey:activeRepeatCount];
             break;
         case 3:
-            [activeDict[@"3M"] setObject:activeArray forKey:activeArrayStr];
-            [activeDict[@"3M"] setObject:repeatCountbutton.titleLabel.text forKey:activeRepeatCount];
+            [activeDict[@"mode3"] setObject:activeArray forKey:activeArrayStr];
+            [activeDict[@"mode3"] setObject:repeatCountbutton.titleLabel.text forKey:activeRepeatCount];
             break;
         default:
             break;
