@@ -26,9 +26,9 @@ typedef NS_ENUM(NSInteger, PCInputtype) {
     NSMutableDictionary *activeDict;
     IHAlertView *alert;
 
-    __weak IBOutlet UIButton *button8M;
-    __weak IBOutlet UIButton *button5M;
-    __weak IBOutlet UIButton *button3M;
+    __weak IBOutlet UIButton *buttonMode1;
+    __weak IBOutlet UIButton *buttonMode2;
+    __weak IBOutlet UIButton *buttonMode3;
     __weak IBOutlet UIButton *repeatCountbutton;
     __weak IBOutlet UILabel *activeTimeLabel;
     __weak IBOutlet UILabel *breakTimeLabel;

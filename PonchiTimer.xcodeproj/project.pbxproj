@@ -20,7 +20,6 @@
 		D031ABDA1AF7A4C1009F3AC1 /* UIButton+style.m in Sources */ = {isa = PBXBuildFile; fileRef = D031ABD91AF7A4C1009F3AC1 /* UIButton+style.m */; };
 		D031ABDE1AF7A740009F3AC1 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D031ABDC1AF7A740009F3AC1 /* TableViewCell.m */; };
 		D031ABDF1AF7A740009F3AC1 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D031ABDD1AF7A740009F3AC1 /* TableViewCell.xib */; };
-		D06EEE401AF9B7FA001101D1 /* YKFoundation3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06EEE3F1AF9B7FA001101D1 /* YKFoundation3.framework */; };
 		D06EEE421AF9B819001101D1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06EEE411AF9B819001101D1 /* CoreLocation.framework */; };
 		D06EEE441AF9B822001101D1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06EEE431AF9B822001101D1 /* SystemConfiguration.framework */; };
 		D06EEE461AF9B828001101D1 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06EEE451AF9B828001101D1 /* CoreMedia.framework */; };
@@ -70,7 +69,6 @@
 		D031ABDB1AF7A740009F3AC1 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		D031ABDC1AF7A740009F3AC1 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		D031ABDD1AF7A740009F3AC1 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
-		D06EEE3F1AF9B7FA001101D1 /* YKFoundation3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YKFoundation3.framework; path = PonchiTimer/YKFoundation3.framework; sourceTree = "<group>"; };
 		D06EEE411AF9B819001101D1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D06EEE431AF9B822001101D1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D06EEE451AF9B828001101D1 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -88,6 +86,7 @@
 		D0DFB9311AF8B7040056D3F9 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		D0DFB9331AF8BB020056D3F9 /* SpeechUtteranceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeechUtteranceViewController.h; sourceTree = "<group>"; };
 		D0DFB9341AF8BB020056D3F9 /* SpeechUtteranceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeechUtteranceViewController.m; sourceTree = "<group>"; };
+		D0EC22E91BE9A9700050C55F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +102,6 @@
 				D06EEE441AF9B822001101D1 /* SystemConfiguration.framework in Frameworks */,
 				D06EEE421AF9B819001101D1 /* CoreLocation.framework in Frameworks */,
 				D0DFB92D1AF8AF540056D3F9 /* AVFoundation.framework in Frameworks */,
-				D06EEE401AF9B7FA001101D1 /* YKFoundation3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +118,9 @@
 		D031AB971AF79FA0009F3AC1 = {
 			isa = PBXGroup;
 			children = (
+				D031ABA21AF79FA0009F3AC1 /* PonchiTimer */,
+				D031ABBC1AF79FA0009F3AC1 /* PonchiTimerTests */,
+				D031ABA11AF79FA0009F3AC1 /* Products */,
 				D06EEE4D1AF9B83B001101D1 /* Security.framework */,
 				D06EEE4B1AF9B837001101D1 /* QuartzCore.framework */,
 				D06EEE491AF9B832001101D1 /* CoreVideo.framework */,
@@ -127,11 +128,7 @@
 				D06EEE451AF9B828001101D1 /* CoreMedia.framework */,
 				D06EEE431AF9B822001101D1 /* SystemConfiguration.framework */,
 				D06EEE411AF9B819001101D1 /* CoreLocation.framework */,
-				D06EEE3F1AF9B7FA001101D1 /* YKFoundation3.framework */,
 				D0DFB92C1AF8AF540056D3F9 /* AVFoundation.framework */,
-				D031ABA21AF79FA0009F3AC1 /* PonchiTimer */,
-				D031ABBC1AF79FA0009F3AC1 /* PonchiTimerTests */,
-				D031ABA11AF79FA0009F3AC1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,6 +180,7 @@
 			children = (
 				D031ABA41AF79FA0009F3AC1 /* Info.plist */,
 				D031ABA51AF79FA0009F3AC1 /* main.m */,
+				D0EC22E91BE9A9700050C55F /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -430,6 +428,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PonchiTimer",
 				);
+				GCC_PREFIX_HEADER = PonchiTimer/PrefixHeader.pch;
 				INFOPLIST_FILE = PonchiTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -447,6 +446,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PonchiTimer",
 				);
+				GCC_PREFIX_HEADER = PonchiTimer/PrefixHeader.pch;
 				INFOPLIST_FILE = PonchiTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

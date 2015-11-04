@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -15,9 +15,33 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsS-bf-TtB">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtq-Yo-ZeO">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="燃脂計時APP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgM-Wr-f7q">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                            <color key="backgroundColor" red="0.97647064920000004" green="0.078431375319999996" blue="0.15686275059999999" alpha="1" colorSpace="deviceRGB"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.97647064920000004" green="0.078431375319999996" blue="0.15686275059999999" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="EiE-3c-qo7"/>
+                        <constraint firstItem="ZgM-Wr-f7q" firstAttribute="leading" secondItem="vtq-Yo-ZeO" secondAttribute="leading" id="GQw-4i-JpC"/>
+                        <constraint firstAttribute="trailing" secondItem="ZgM-Wr-f7q" secondAttribute="trailing" id="Hhr-vP-Eer"/>
+                        <constraint firstAttribute="bottom" secondItem="ZgM-Wr-f7q" secondAttribute="bottom" id="XkO-HV-ATO"/>
+                        <constraint firstItem="ZgM-Wr-f7q" firstAttribute="top" secondItem="vtq-Yo-ZeO" secondAttribute="top" id="wNM-Go-26B"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsS-bf-TtB">
                     <rect key="frame" x="72" y="136" width="176" height="58"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="58" id="k83-fe-8Gy"/>
+                        <constraint firstAttribute="width" constant="176" id="zeX-sJ-895"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="40"/>
                     <state key="normal" title="Mode1">
                         <color key="titleColor" red="0.97647064920000004" green="0.078431375319999996" blue="0.15686275059999999" alpha="1" colorSpace="deviceRGB"/>
@@ -27,9 +51,13 @@
                         <action selector="startAction:" destination="-1" eventType="touchUpInside" id="EPb-YP-dF9"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVl-DP-kCU">
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVl-DP-kCU">
                     <rect key="frame" x="72" y="230" width="176" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="nbE-Sq-5yb"/>
+                        <constraint firstAttribute="width" constant="176" id="wS7-2H-IEY"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="40"/>
                     <state key="normal" title="Mode2">
                         <color key="titleColor" red="0.97647064920000004" green="0.078431375319999996" blue="0.15686275059999999" alpha="1" colorSpace="deviceRGB"/>
@@ -39,9 +67,13 @@
                         <action selector="startAction:" destination="-1" eventType="touchUpInside" id="5NO-bK-hMp"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6C-EW-sFY">
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6C-EW-sFY">
                     <rect key="frame" x="72" y="328" width="176" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="5TQ-28-xGp"/>
+                        <constraint firstAttribute="width" constant="176" id="8Yy-Bi-6Fv"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="40"/>
                     <state key="normal" title="Mode3">
                         <color key="titleColor" red="0.97647064920000004" green="0.078431375319999996" blue="0.15686275059999999" alpha="1" colorSpace="deviceRGB"/>
@@ -51,9 +83,13 @@
                         <action selector="startAction:" destination="-1" eventType="touchUpInside" id="Afp-29-y8G"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWg-Ep-VpR">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWg-Ep-VpR">
                     <rect key="frame" x="72" y="423" width="176" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="176" id="nWp-ib-lrt"/>
+                        <constraint firstAttribute="height" constant="60" id="rSm-Od-C7k"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="40"/>
                     <state key="normal" title="Settings">
                         <color key="titleColor" red="0.97647064920000004" green="0.078431375319999996" blue="0.15686275059999999" alpha="1" colorSpace="deviceRGB"/>
@@ -63,23 +99,23 @@
                         <action selector="settingsAction:" destination="-1" eventType="touchUpInside" id="0LI-S6-FbJ"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vtq-Yo-ZeO">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="碰氣燃脂APP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgM-Wr-f7q">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
-                            <color key="backgroundColor" red="0.97647064920000004" green="0.078431375319999996" blue="0.15686275059999999" alpha="1" colorSpace="deviceRGB"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="0.97647064920000004" green="0.078431375319999996" blue="0.15686275059999999" alpha="1" colorSpace="deviceRGB"/>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="bsS-bf-TtB" firstAttribute="top" secondItem="vtq-Yo-ZeO" secondAttribute="bottom" constant="56" id="8he-f1-wzE"/>
+                <constraint firstItem="iVl-DP-kCU" firstAttribute="top" secondItem="bsS-bf-TtB" secondAttribute="bottom" constant="36" id="IgA-wa-KkT"/>
+                <constraint firstItem="vtq-Yo-ZeO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Q8O-T1-ClV"/>
+                <constraint firstItem="iVl-DP-kCU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SuL-Fr-iHd"/>
+                <constraint firstItem="w6C-EW-sFY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Vq3-ta-rCw"/>
+                <constraint firstItem="vtq-Yo-ZeO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YhA-AE-cqB"/>
+                <constraint firstItem="cWg-Ep-VpR" firstAttribute="top" secondItem="w6C-EW-sFY" secondAttribute="bottom" constant="35" id="eWI-rh-qgr"/>
+                <constraint firstItem="bsS-bf-TtB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fGa-b7-veL"/>
+                <constraint firstItem="cWg-Ep-VpR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="g64-HB-qBd"/>
+                <constraint firstItem="w6C-EW-sFY" firstAttribute="top" secondItem="iVl-DP-kCU" secondAttribute="bottom" constant="38" id="vJH-WH-l9d"/>
+                <constraint firstAttribute="trailing" secondItem="vtq-Yo-ZeO" secondAttribute="trailing" id="wDc-Mp-0Z1"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="395" y="308"/>
+            <point key="canvasLocation" x="490" y="237"/>
         </view>
     </objects>
 </document>

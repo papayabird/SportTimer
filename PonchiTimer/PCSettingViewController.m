@@ -35,7 +35,7 @@
         }
     }
     
-    [self startAction:button8M];
+    [self startAction:buttonMode1];
     
     alert = [[IHAlertView alloc] init];
     alert.delegate = self;
@@ -147,13 +147,13 @@
 
 - (void)resetButtonType
 {
-    button3M.backgroundColor = [UIColor blackColor];
-    button5M.backgroundColor = [UIColor blackColor];
-    button8M.backgroundColor = [UIColor blackColor];
+    buttonMode1.backgroundColor = [UIColor blackColor];
+    buttonMode2.backgroundColor = [UIColor blackColor];
+    buttonMode3.backgroundColor = [UIColor blackColor];
     
-    button3M.titleLabel.textColor = [UIColor redColor];
-    button5M.titleLabel.textColor = [UIColor redColor];
-    button8M.titleLabel.textColor = [UIColor redColor];
+    buttonMode1.titleLabel.textColor = [UIColor redColor];
+    buttonMode2.titleLabel.textColor = [UIColor redColor];
+    buttonMode3.titleLabel.textColor = [UIColor redColor];
 }
 
 #pragma mark - Cell Delegate
@@ -305,7 +305,6 @@
 
 - (void)deleteAction:(UIButton *)button
 {
-    YKSimpleAlert(@"此功能尚未開放");
     return;
     
     if (!editBool) {

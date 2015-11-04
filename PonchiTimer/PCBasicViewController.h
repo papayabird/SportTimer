@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-#import <YKFoundation3/YKFoundation3.h>
 
 @interface PCBasicViewController : UIViewController
 
