@@ -189,19 +189,30 @@
             [activeArray replaceObjectAtIndex:editRow withObject:dict];
         }
         else if (inputType == PCInputtypeTime) {
-            NSMutableDictionary *dict = [activeArray[editRow] mutableCopy];
-            [dict setObject:inputViewField.text forKey:activeTime];
-            [activeArray replaceObjectAtIndex:editRow withObject:dict];
+            
+            if ([self isPureInt:inputViewField.text]) {
+        
+                NSMutableDictionary *dict = [activeArray[editRow] mutableCopy];
+                [dict setObject:inputViewField.text forKey:activeTime];
+                [activeArray replaceObjectAtIndex:editRow withObject:dict];
+            }
         }
         else {
-            repeatCount = [inputViewField.text intValue];
-            
+            if ([self isPureInt:inputViewField.text]) {
+                repeatCount = [inputViewField.text intValue];
+            }
         }
         [self reloadtableView];
     }
     
     inputViewField.text = @"";
     [alert removeAlert];
+}
+
+- (BOOL)isPureInt:(NSString*)string{
+    NSScanner* scan = [NSScanner scannerWithString:string];
+    int val;
+    return[scan scanInt:&val] && [scan isAtEnd];
 }
 
 #pragma mark - UITableView Delegate & Datasource

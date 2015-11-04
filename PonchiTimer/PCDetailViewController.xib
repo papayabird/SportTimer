@@ -77,6 +77,9 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eEl-j8-ZHo">
                     <rect key="frame" x="0.0" y="176" width="320" height="332"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="spk-Av-u5S"/>
+                    </constraints>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="1wx-L8-52X"/>
                         <outlet property="delegate" destination="-1" id="CrR-i7-vdb"/>
@@ -147,6 +150,7 @@
                 <constraint firstItem="0g8-2n-1nM" firstAttribute="top" secondItem="5oS-KV-kn1" secondAttribute="bottom" constant="5" id="cHW-a9-LlV"/>
                 <constraint firstAttribute="bottom" secondItem="1yO-Ue-gq1" secondAttribute="bottom" id="dVF-1R-VfG"/>
                 <constraint firstAttribute="trailing" secondItem="eEl-j8-ZHo" secondAttribute="trailing" id="ewi-zc-Kwu"/>
+                <constraint firstItem="eEl-j8-ZHo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kji-kA-ANB"/>
                 <constraint firstItem="Wsk-Dz-xk9" firstAttribute="top" secondItem="XMT-nI-m9n" secondAttribute="bottom" constant="7" id="nSP-3S-c2T"/>
                 <constraint firstItem="IMT-tS-ogb" firstAttribute="top" secondItem="5oS-KV-kn1" secondAttribute="bottom" id="plh-jx-ojg"/>
                 <constraint firstItem="ag8-QJ-i8s" firstAttribute="top" secondItem="0g8-2n-1nM" secondAttribute="bottom" constant="7" id="q1p-yY-6lJ"/>
@@ -158,9 +162,11 @@
                     <exclude reference="DLa-oY-1xg"/>
                     <exclude reference="HT2-ae-gwn"/>
                     <exclude reference="IcG-V7-x6r"/>
+                    <exclude reference="6IB-Ec-fKo"/>
+                    <exclude reference="ewi-zc-Kwu"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="881" y="368"/>
+            <point key="canvasLocation" x="695" y="414"/>
         </view>
     </objects>
 </document>

@@ -200,9 +200,7 @@ static NSString * BCP47LanguageCodeForString(NSString *string) {
     //設定聲音物件
 //    utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:BCP47LanguageCodeForString(utterance.speechString)];
     //utterance.pitchMultiplier = 0.5f;
-    utterance.rate = AVSpeechUtteranceMinimumSpeechRate;
-    utterance.preUtteranceDelay = 0.3f;
-    utterance.postUtteranceDelay = 0.3f;
+    utterance.rate = AVSpeechUtteranceDefaultSpeechRate;
     
     [self.speechSynthesizer speakUtterance:utterance];
 }
@@ -243,7 +241,7 @@ static NSString * BCP47LanguageCodeForString(NSString *string) {
 //    utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"apple"];
 
     //utterance.pitchMultiplier = 0.5f;
-    utterance.rate = AVSpeechUtteranceMinimumSpeechRate;
+    utterance.rate = AVSpeechUtteranceDefaultSpeechRate;
     utterance.preUtteranceDelay = 0.1f;
     utterance.postUtteranceDelay = 0.1f;
     
