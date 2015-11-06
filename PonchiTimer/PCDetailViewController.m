@@ -196,7 +196,7 @@
             str = [NSString stringWithFormat:@"已經完成了%i次了喔！",finishedCount];
 
         }else {
-            str = @"何不再一次呢肥子!";
+            str = @"好棒喔,完成了!";
         }
         
         UIAlertView *finishAlert = [[UIAlertView alloc] initWithTitle:str message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
