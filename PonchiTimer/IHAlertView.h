@@ -13,7 +13,7 @@
 @property (weak) UIViewController *delegate;
 @property (nonatomic,strong) UIView *coverAllWindowView;
 @property (nonatomic,strong) UIView *displayView;
-
+@property (nonatomic) BOOL isAnimationDone;
 -(void)displayViewAtCenter:(UIView *)theView;
 
 - (void)removeAlert;

@@ -20,6 +20,8 @@
     __weak IBOutlet UILabel *currentTimeLabel;
 
     NSMutableArray *activeArray;
+    NSMutableArray *displayTableArray;
+
     NSMutableDictionary *activeDict;
 
     int repeatCount;

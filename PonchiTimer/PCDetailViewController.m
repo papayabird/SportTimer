@@ -26,6 +26,7 @@
         
         activeArray = [NSMutableArray array];
         activeDict  = [NSMutableDictionary dictionary];
+        speakVC = [[SpeechUtteranceViewController alloc] init];
     }
     return self;
 }
@@ -91,6 +92,8 @@
     AVAudioPlayer *aPlayer2 = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path2] error:NULL];
     sound = aPlayer2;
     [sound prepareToPlay];
+    
+    displayTableArray = [NSMutableArray arrayWithArray:activeArray];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -137,7 +140,6 @@
 
 - (void)speakword:(NSString *)word
 {
-    speakVC = [[SpeechUtteranceViewController alloc] init];
     [speakVC speakWord:word];
 }
 
@@ -153,6 +155,17 @@
             count++;
             sumSec += [activeArray[count][activeTime] intValue];
             [self speakword:activeArray[count][activeName]];
+            
+            [displayTableArray removeObjectAtIndex:0];
+            [progressTableView reloadData];
+            
+//            [progressTableView beginUpdates];
+//            [progressTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+//
+//            [progressTableView endUpdates];
+//            
+//            [progressTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+            
         }
         
         return YES;
@@ -210,14 +223,14 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [activeArray count];
+    return [displayTableArray count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TableViewCell *cell = [TableViewCell cell];
     
-    NSDictionary *dict = activeArray[indexPath .row];
+    NSDictionary *dict = displayTableArray[indexPath .row];
     [cell.activeName setTitle:dict[activeName] forState:UIControlStateNormal];
     [cell.activeTime setTitle:[dict[activeTime] stringByAppendingString:@"s"] forState:UIControlStateNormal];
     

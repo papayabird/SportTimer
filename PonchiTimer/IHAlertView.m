@@ -76,6 +76,9 @@
 
 - (void)tapAction:(UITapGestureRecognizer *)recognizer
 {
+    if (!self.isAnimationDone) {
+        return;
+    }
     UIView *view = [recognizer view];
     [view.superview removeFromSuperview];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -118,8 +121,11 @@
     sizeY = MAX(0, sizeY);
     
     [UIView animateWithDuration:0.3 animations:^{
+        self.isAnimationDone = NO;
         displayView.frame = CGRectMake(displayView.frame.origin.x, sizeY, displayView.frame.size.width, displayView.frame.size.height);
-    } completion:nil];
+    } completion:^(BOOL finished) {
+        self.isAnimationDone = YES;
+    }];
     
 }
 
@@ -129,9 +135,11 @@
     int keyboardHeight = MIN(keyboardSize.height, keyboardSize.width);
     
     [UIView animateWithDuration:0.3 animations:^{
-        
+        self.isAnimationDone = NO;
         displayView.frame = CGRectMake((coverAllWindowView.frame.size.width - displayView.frame.size.width)/2, /*(coverAllWindowView.frame.size.height - displayView.frame.size.height)/2*/ 74, displayView.bounds.size.width, displayView.bounds.size.height);
-    }completion:nil];
+    }completion:^(BOOL finished) {
+        self.isAnimationDone = YES;
+    }];
 }
 
 

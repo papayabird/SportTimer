@@ -92,6 +92,8 @@
 {
     [alert displayViewAtCenter:inputView];
     inputViewTitle.text = @"請輸入循環次數";
+    inputViewField.keyboardType = UIKeyboardTypeNumberPad;
+    [inputViewField becomeFirstResponder];
     inputType = PCInputtypeRepeatCount;
 }
 
@@ -142,7 +144,7 @@
             break;
     }
     
-    BOOL is = [activeDict writeToFile:[[AppDelegate sharedAppDelegate] getActivePlistPath] atomically:YES];
+    BOOL isSave = [activeDict writeToFile:[[AppDelegate sharedAppDelegate] getActivePlistPath] atomically:YES];
 }
 
 - (void)resetButtonType
@@ -161,6 +163,8 @@
 {
     [alert displayViewAtCenter:inputView];
     inputViewTitle.text = @"請輸入運動名稱";
+    inputViewField.keyboardType = UIKeyboardTypeDefault;
+    [inputViewField becomeFirstResponder];;
     inputType = PCInputtypeName;
     editRow = indexPath;
 }
@@ -169,18 +173,28 @@
 {
     [alert displayViewAtCenter:inputView];
     inputViewTitle.text = @"請輸入運動時間";
+    inputViewField.keyboardType = UIKeyboardTypeNumberPad;
+    [inputViewField becomeFirstResponder];
     inputType = PCInputtypeTime;
     editRow = indexPath;
 }
 
 - (IBAction)inputCancel:(id)sender
 {
+    if (!alert.isAnimationDone) {
+        return;
+    }
+    
     inputViewField.text = @"";
     [alert removeAlert];
 }
 
 - (IBAction)inputSave:(id)sender
 {
+    if (!alert.isAnimationDone) {
+        return;
+    }
+    
     if (inputViewField.text.length != 0) {
         
         if (inputType == PCInputtypeName) {
@@ -301,8 +315,9 @@
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
-
-
+    [activeArray exchangeObjectAtIndex:fromIndexPath.row withObjectAtIndex:toIndexPath.row];
+    [activeArray exchangeObjectAtIndex:fromIndexPath.row withObjectAtIndex:toIndexPath.row];
+    [activeArray exchangeObjectAtIndex:fromIndexPath.row withObjectAtIndex:toIndexPath.row];
 }
 
 - (void)addRowAction
