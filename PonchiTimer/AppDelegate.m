@@ -24,6 +24,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window makeKeyAndVisible];
     
+    [[UIApplication sharedApplication] setIdleTimerDisabled: YES];
+
     PCRootViewController *rootVC = [[PCRootViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:rootVC];
     nav.navigationBar.hidden = YES;

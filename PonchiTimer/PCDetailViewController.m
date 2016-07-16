@@ -90,6 +90,8 @@
     //聲音
     NSString *path2 = [[NSBundle mainBundle] pathForResource:@"mouse_click" ofType:@"mp3"];
     AVAudioPlayer *aPlayer2 = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path2] error:NULL];
+    AVAudioSession * avSession = [AVAudioSession sharedInstance];
+    [avSession  setCategory:AVAudioSessionCategoryPlayback error:nil];
     sound = aPlayer2;
     [sound prepareToPlay];
     
