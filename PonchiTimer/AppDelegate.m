@@ -25,7 +25,7 @@
     [self.window makeKeyAndVisible];
     
     [[UIApplication sharedApplication] setIdleTimerDisabled: YES];
-
+    
     PCRootViewController *rootVC = [[PCRootViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:rootVC];
     nav.navigationBar.hidden = YES;
@@ -34,19 +34,54 @@
     return YES;
 }
 
-- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notif
+- (void)setUserNotification
 {
-    if(application.applicationState == UIApplicationStateActive) {
+    [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        if (granted) {
+            
+            UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
+            content.title = @"還在睡？";
+            content.subtitle = @"趕快動起來";
+            content.body = @"動茲動茲動茲動";
+            
+            // app显示通知数量的角标
+//               content.badge = @(self.badge);
+            
+            // 通知的提示声音，这里用的默认的声音
+            content.sound = [UNNotificationSound defaultSound];
+            
+//               NSURL *imageUrl = [[NSBundle mainBundle] URLForResource:@"jianglai" withExtension:@"jpg"];
+//               UNNotificationAttachment *attachment = [UNNotificationAttachment attachmentWithIdentifier:@"imageIndetifier" URL:imageUrl options:nil error:nil];
+//               content.attachments = @[attachment];
+            
+            content.categoryIdentifier = @"categoryIndentifier";
+            
+            /* 触发器分三种：
+             UNTimeIntervalNotificationTrigger : 在一定时间后触发，如果设置重复的话，timeInterval不能小于60
+             UNCalendarNotificationTrigger : 在某天某时触发，可重复
+             UNLocationNotificationTrigger : 进入或离开某个地理区域时触发
+            */
+            int sec = (3600 * 24) + 300;
+            UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:sec repeats:YES];
+            
+            UNNotificationRequest *notificationRequest = [UNNotificationRequest requestWithIdentifier:@"KFGroupNotification" content:content trigger:trigger];
+            
+            [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:notificationRequest withCompletionHandler:^(NSError * _Nullable error) {
+                if (error == nil) {
+                    NSLog(@"已成功發送%@",notificationRequest.identifier);
+                }
+            }];
+        }
         
-    }
+    }];
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
     
-    UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:@"準備燃燒你的脂肪吧！"
-                              message:nil
-                              delegate:self
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil, nil];
-    [alertView show];
+    // 展示
+    completionHandler(UNNotificationPresentationOptionAlert|UNNotificationPresentationOptionSound);
+//    // 不展示
+//    completionHandler(UNNotificationPresentationOptionNone);
 }
 
 - (NSString *)getActivePlistPath

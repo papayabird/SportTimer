@@ -29,5 +29,8 @@ static NSString *const FinishedUserDefaults = @"FinishedUserDefaults";
 
 - (NSString *)getActivePlistPath;
 
+- (void)setUserNotification;
+
+
 @end
 

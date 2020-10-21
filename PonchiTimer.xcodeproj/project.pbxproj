@@ -33,6 +33,7 @@
 		D0DFB92F1AF8B28D0056D3F9 /* mouse_click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D0DFB92E1AF8B28D0056D3F9 /* mouse_click.mp3 */; };
 		D0DFB9321AF8B7040056D3F9 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DFB9311AF8B7040056D3F9 /* UIView+Toast.m */; };
 		D0DFB9351AF8BB020056D3F9 /* SpeechUtteranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DFB9341AF8BB020056D3F9 /* SpeechUtteranceViewController.m */; };
+		D0DFE7D825402E0D00EFE520 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DFE7D725402E0D00EFE520 /* Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,8 @@
 		D0DFB9311AF8B7040056D3F9 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		D0DFB9331AF8BB020056D3F9 /* SpeechUtteranceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeechUtteranceViewController.h; sourceTree = "<group>"; };
 		D0DFB9341AF8BB020056D3F9 /* SpeechUtteranceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeechUtteranceViewController.m; sourceTree = "<group>"; };
+		D0DFE7D625402E0D00EFE520 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		D0DFE7D725402E0D00EFE520 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		D0EC22E91BE9A9700050C55F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +172,8 @@
 				D031ABDB1AF7A740009F3AC1 /* TableViewCell.h */,
 				D031ABDC1AF7A740009F3AC1 /* TableViewCell.m */,
 				D031ABDD1AF7A740009F3AC1 /* TableViewCell.xib */,
+				D0DFE7D625402E0D00EFE520 /* Utils.h */,
+				D0DFE7D725402E0D00EFE520 /* Utils.m */,
 				D031ABB01AF79FA0009F3AC1 /* Images.xcassets */,
 				D031ABA31AF79FA0009F3AC1 /* Supporting Files */,
 			);
@@ -316,6 +321,7 @@
 				D0DFB9321AF8B7040056D3F9 /* UIView+Toast.m in Sources */,
 				D06EEE511AF9B895001101D1 /* PCBasicViewController.m in Sources */,
 				D031ABDE1AF7A740009F3AC1 /* TableViewCell.m in Sources */,
+				D0DFE7D825402E0D00EFE520 /* Utils.m in Sources */,
 				D0DFB9351AF8BB020056D3F9 /* SpeechUtteranceViewController.m in Sources */,
 				D031ABD11AF7A18E009F3AC1 /* PCDetailViewController.m in Sources */,
 				D031ABCC1AF7A023009F3AC1 /* PCRootViewController.m in Sources */,

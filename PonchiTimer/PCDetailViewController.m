@@ -84,6 +84,9 @@
     
     //初始化
     count = 0;
+//    for (NSDictionary *dict in activeArray) {
+//        sumSec += [dict [activeTime] intValue];
+//    }
     sumSec = [activeArray[0][activeTime] intValue];
     
     
@@ -110,10 +113,9 @@
 {
     //如果沒有設定排程就擋掉
     if ([activeArray count] == 0) {
-        
-        UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"請先設定排程" message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [errorAlert show];
-        
+        [[Utils sharedManager] showOneBtnAlert:self title:@"請先設定排程" message:@"" completion:^{
+            [self dismissViewControllerAnimated:YES completion:^{}];
+        }];
         return;
     }
     
@@ -122,6 +124,7 @@
         //開始
         
         if (firstStart) {
+            [[AppDelegate sharedAppDelegate] setUserNotification];
             [self startTime];
             firstStart = NO;
             [self speakword:activeArray[count][activeName]];
@@ -148,6 +151,7 @@
 - (BOOL)getTime
 {
     NSLog(@"sumSec = %i",sumSec);
+    NSLog(@"currentTimeInt = %i",currentTimeInt);
     if (sumSec == currentTimeInt) {
         
         if (count == [activeArray count] - 1) {
@@ -157,7 +161,7 @@
             count++;
             sumSec += [activeArray[count][activeTime] intValue];
             [self speakword:activeArray[count][activeName]];
-            
+            [sound play];
             [displayTableArray removeObjectAtIndex:0];
             [progressTableView reloadData];
         }
@@ -168,8 +172,9 @@
         
     }
     
+    [sound play];
+
     if (count % 2 == 0 && count != 0) {
-        [sound play];
     }
     else {
  
@@ -210,11 +215,11 @@
         }else {
             str = @"好棒喔,完成了!";
         }
-        
-        UIAlertView *finishAlert = [[UIAlertView alloc] initWithTitle:str message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [finishAlert show];
-        
-        [self backAction:nil];
+        [self speakword:str];
+
+        [[Utils sharedManager] showOneBtnAlert:self title:str message:@"" completion:^{
+            [self backAction:nil];
+        }];
     }
 }
 

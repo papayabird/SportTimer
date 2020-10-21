@@ -323,7 +323,7 @@
 - (void)addRowAction
 {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    [dict setObject:@"運動" forKey:activeName];
+    [dict setObject:@"動茲動" forKey:activeName];
     [dict setObject:@"0" forKey:activeTime];
     [activeArray addObject:dict];
     [self reloadtableView];
