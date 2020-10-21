@@ -160,14 +160,6 @@
             
             [displayTableArray removeObjectAtIndex:0];
             [progressTableView reloadData];
-            
-//            [progressTableView beginUpdates];
-//            [progressTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
-//
-//            [progressTableView endUpdates];
-//            
-//            [progressTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
-            
         }
         
         return YES;
@@ -176,6 +168,13 @@
         
     }
     
+    if (count % 2 == 0 && count != 0) {
+        [sound play];
+    }
+    else {
+ 
+    }
+
     return NO;
 }
 
@@ -189,9 +188,7 @@
 {
     currentTimeInt++;
     
-    if (![self getTime]) {
-        [sound play];
-    }
+    [self getTime];
     
     int min = currentTimeInt / 60;
     int sec = currentTimeInt % 60;

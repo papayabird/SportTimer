@@ -442,7 +442,7 @@
 				);
 				GCC_PREFIX_HEADER = PonchiTimer/PrefixHeader.pch;
 				INFOPLIST_FILE = PonchiTimer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ponchi.ponchitimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -466,7 +466,7 @@
 				);
 				GCC_PREFIX_HEADER = PonchiTimer/PrefixHeader.pch;
 				INFOPLIST_FILE = PonchiTimer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ponchi.ponchitimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
