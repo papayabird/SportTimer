@@ -11,10 +11,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PCDetailViewController">
             <connections>
+                <outlet property="backBtn" destination="1yO-Ue-gq1" id="6IP-BV-hPc"/>
                 <outlet property="currentTimeLabel" destination="ag8-QJ-i8s" id="OM7-9r-dow"/>
+                <outlet property="currentTimeTitleLabel" destination="0g8-2n-1nM" id="2rR-BZ-71x"/>
                 <outlet property="progressTableView" destination="eEl-j8-ZHo" id="Y3R-cp-pxD"/>
                 <outlet property="startButton" destination="Ado-zc-DLN" id="CjS-5b-LB0"/>
                 <outlet property="totalTimeLabel" destination="Wsk-Dz-xk9" id="0EL-jH-LIx"/>
+                <outlet property="totalTimeTitleLabel" destination="XMT-nI-m9n" id="bfX-i4-FnO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,7 +38,7 @@
                                 <color key="titleColor" red="0.85098039215686272" green="0.30588235294117649" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
-                            <state key="selected" title="Stop"/>
+                            <state key="selected" title="Stop!"/>
                             <state key="highlighted">
                                 <color key="titleColor" red="0.95682239532470703" green="0.0" blue="0.12225879728794098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -100,7 +103,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMT-tS-ogb">
-                    <rect key="frame" x="205.66666666666666" y="80" width="3" height="96"/>
+                    <rect key="frame" x="206.66666666666666" y="80" width="3" height="96"/>
                     <color key="backgroundColor" name="MainColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="96" id="0hj-9k-qGH"/>
@@ -139,16 +142,16 @@
                 <constraint firstItem="eEl-j8-ZHo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6IB-Ec-fKo"/>
                 <constraint firstItem="5oS-KV-kn1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6oY-aj-dqe"/>
                 <constraint firstAttribute="trailing" secondItem="1yO-Ue-gq1" secondAttribute="trailing" id="8K3-dd-WDa"/>
-                <constraint firstItem="IMT-tS-ogb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AF1-UJ-2Tj"/>
+                <constraint firstItem="IMT-tS-ogb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="1.1666666666666572" id="AF1-UJ-2Tj"/>
                 <constraint firstItem="Wsk-Dz-xk9" firstAttribute="centerX" secondItem="XMT-nI-m9n" secondAttribute="centerX" id="DLa-oY-1xg"/>
                 <constraint firstItem="eEl-j8-ZHo" firstAttribute="bottom" secondItem="1yO-Ue-gq1" secondAttribute="top" id="GBR-0J-R8n"/>
                 <constraint firstItem="Wsk-Dz-xk9" firstAttribute="width" secondItem="XMT-nI-m9n" secondAttribute="width" constant="8" id="GcZ-X1-FUk"/>
                 <constraint firstItem="Wsk-Dz-xk9" firstAttribute="leading" secondItem="XMT-nI-m9n" secondAttribute="leading" id="HT2-ae-gwn"/>
                 <constraint firstItem="Wsk-Dz-xk9" firstAttribute="trailing" secondItem="XMT-nI-m9n" secondAttribute="trailing" id="IcG-V7-x6r"/>
-                <constraint firstItem="0g8-2n-1nM" firstAttribute="leading" secondItem="IMT-tS-ogb" secondAttribute="trailing" constant="3" id="Knk-MU-J8r"/>
+                <constraint firstItem="0g8-2n-1nM" firstAttribute="leading" secondItem="IMT-tS-ogb" secondAttribute="trailing" constant="1.9999999999999716" id="Knk-MU-J8r"/>
                 <constraint firstItem="5oS-KV-kn1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="NG8-sW-hUH"/>
                 <constraint firstItem="1yO-Ue-gq1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Nll-tx-NvQ"/>
-                <constraint firstItem="XMT-nI-m9n" firstAttribute="trailing" secondItem="IMT-tS-ogb" secondAttribute="trailing" constant="-5" id="QKI-ag-OiN"/>
+                <constraint firstItem="XMT-nI-m9n" firstAttribute="trailing" secondItem="IMT-tS-ogb" secondAttribute="trailing" constant="-6" id="QKI-ag-OiN"/>
                 <constraint firstItem="ag8-QJ-i8s" firstAttribute="width" secondItem="0g8-2n-1nM" secondAttribute="width" constant="8" id="Te5-0X-4iy"/>
                 <constraint firstItem="XMT-nI-m9n" firstAttribute="top" secondItem="5oS-KV-kn1" secondAttribute="bottom" constant="5" id="UKM-Tf-1bh"/>
                 <constraint firstItem="ag8-QJ-i8s" firstAttribute="centerX" secondItem="0g8-2n-1nM" secondAttribute="centerX" id="W4D-pK-yhT"/>

@@ -11,6 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PCRootViewController">
             <connections>
+                <outlet property="mode1Btn" destination="bsS-bf-TtB" id="Hez-7I-cpg"/>
+                <outlet property="mode2Btn" destination="iVl-DP-kCU" id="whV-aQ-JJA"/>
+                <outlet property="mode3Btn" destination="w6C-EW-sFY" id="j3h-ao-J8A"/>
+                <outlet property="scheduleBtn" destination="cWg-Ep-VpR" id="UOM-L3-dui"/>
+                <outlet property="titleLabel" destination="ZgM-Wr-f7q" id="lYq-SW-hoS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

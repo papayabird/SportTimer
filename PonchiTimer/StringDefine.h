@@ -23,6 +23,10 @@
 
 //Detail VC
 #define kPlease_Create_Schedule_First @"請先設定排程"
+#define kPrepareName @"準備囉"
+#define kPrepareTime @"5"
+
+
 
 //Schedule VC
 #define kInput_Active_Name @"請輸入運動名稱"

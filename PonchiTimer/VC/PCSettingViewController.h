@@ -18,33 +18,6 @@ typedef NS_ENUM(NSInteger, PCInputtype) {
 
 @interface PCSettingViewController : PCBasicViewController <UITableViewDataSource, UITableViewDelegate, TableCellDelegate>
 
-{
-    __weak IBOutlet UITableView *settingTableView;
-    PCStatusType statusType;
-    PCInputtype inputType;
-    NSMutableArray *activeArray;
-    NSMutableDictionary *activeDict;
-    IHAlertView *alert;
 
-    __weak IBOutlet UIButton *buttonMode1;
-    __weak IBOutlet UIButton *buttonMode2;
-    __weak IBOutlet UIButton *buttonMode3;
-    __weak IBOutlet UIButton *repeatCountbutton;
-    __weak IBOutlet UILabel *activeTimeLabel;
-    __weak IBOutlet UILabel *breakTimeLabel;
-    __weak IBOutlet UILabel *totalTimeLabel;
-    
-    BOOL editBool;
-    int editRow;
-    
-    //inputView
-    IBOutlet UIView *inputView;
-    __weak IBOutlet UILabel *inputViewTitle;
-    __weak IBOutlet UITextField *inputViewField;
-    
-    //repeatCount
-    int repeatCount;
-    
-}
 
 @end

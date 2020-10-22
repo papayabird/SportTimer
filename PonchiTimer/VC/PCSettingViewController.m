@@ -10,6 +10,32 @@
 
 @interface PCSettingViewController ()
 
+{
+    __weak IBOutlet UITableView *settingTableView;
+    PCStatusType statusType;
+    PCInputtype inputType;
+    NSMutableArray *activeArray;
+    NSMutableDictionary *activeDict;
+    IHAlertView *alert;
+
+    __weak IBOutlet UIButton *buttonMode1;
+    __weak IBOutlet UIButton *buttonMode2;
+    __weak IBOutlet UIButton *buttonMode3;
+    __weak IBOutlet UIButton *repeatCountbutton;
+    __weak IBOutlet UILabel *totalTimeLabel;
+    
+    BOOL editBool;
+    int editRow;
+    
+    //inputView
+    IBOutlet UIView *inputView;
+    __weak IBOutlet UILabel *inputViewTitle;
+    __weak IBOutlet UITextField *inputViewField;
+    
+    //repeatCount
+    int repeatCount;
+}
+
 @end
 
 @implementation PCSettingViewController
@@ -34,7 +60,7 @@
         for (int i = 0; i < 3; i++) {
             NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
             [dict setObject:[NSMutableArray array] forKey:activeArrayStr];
-            [dict setObject:@"1" forKey:activeRepeatCount];
+            [dict setObject:@"0" forKey:activeRepeatCount];
             [activeDict setObject:dict forKey:array[i]];
         }
     }

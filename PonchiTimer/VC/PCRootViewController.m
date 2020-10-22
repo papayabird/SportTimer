@@ -11,6 +11,15 @@
 #import "PCSettingViewController.h"
 @interface PCRootViewController ()
 
+{
+    __weak IBOutlet UILabel *titleLabel;
+    __weak IBOutlet UIButton *mode1Btn;
+    __weak IBOutlet UIButton *mode2Btn;
+    __weak IBOutlet UIButton *mode3Btn;
+    __weak IBOutlet UIButton *scheduleBtn;
+    
+}
+
 @end
 
 @implementation PCRootViewController
@@ -20,9 +29,19 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self prepareUI];
+}
+
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [[AppDelegate sharedAppDelegate] setUserNotification];
+}
+
+- (void)prepareUI {
+    
 }
 
 - (IBAction)startAction:(id)sender

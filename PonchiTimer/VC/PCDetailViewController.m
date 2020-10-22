@@ -12,6 +12,34 @@
 
 @interface PCDetailViewController ()
 
+{
+    PCStatusType statusType;
+    __weak IBOutlet UITableView *progressTableView;
+    __weak IBOutlet UILabel *totalTimeLabel;
+    __weak IBOutlet UILabel *currentTimeLabel;
+    __weak IBOutlet UIButton *startButton;
+    __weak IBOutlet UILabel *totalTimeTitleLabel;
+    __weak IBOutlet UILabel *currentTimeTitleLabel;
+    __weak IBOutlet UIButton *backBtn;
+    
+    NSMutableArray *activeArray;
+    NSMutableArray *displayTableArray;
+
+    NSMutableDictionary *activeDict;
+
+    int repeatCount;
+
+    NSTimer *currentTimer;
+    int currentTimeInt;
+
+    BOOL firstStart;
+    int count;
+    int sumSec;
+    AVAudioPlayer *sound;
+    SpeechUtteranceViewController *speakVC;
+}
+
+
 @property (readwrite, nonatomic, strong) AVSpeechSynthesizer *speechSynthesizer;
 
 @end
@@ -63,9 +91,12 @@
         return;
     }
     
+    //開頭準備
+    [self addPrepareActive];
+    
     //加總重複次數
     NSMutableArray *copyArray = [activeArray copy];
-    for (int i = 0; i < repeatCount - 1; i++) {
+    for (int i = 0; i < repeatCount; i++) {
         [activeArray addObjectsFromArray:copyArray];
     }
     
@@ -104,6 +135,10 @@
     currentTimer = nil;
     
     [super viewWillDisappear:animated];
+}
+
+- (void)addPrepareActive {
+    [activeArray insertObject:@{activeName:kPrepareName,activeTime:kPrepareTime} atIndex:0];
 }
 
 - (IBAction)startAction:(UIButton *)sender
