@@ -16,7 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    if (@available(iOS 13.0, *)) {
+        self.modalInPresentation = YES;
+    } else {
+        // Fallback on earlier versions
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -165,6 +169,7 @@
     inputViewTitle.text = @"請輸入運動名稱";
     inputViewField.keyboardType = UIKeyboardTypeDefault;
     [inputViewField becomeFirstResponder];;
+    inputViewField.text = activeArray[indexPath][activeName];
     inputType = PCInputtypeName;
     editRow = indexPath;
 }
@@ -175,6 +180,7 @@
     inputViewTitle.text = @"請輸入運動時間";
     inputViewField.keyboardType = UIKeyboardTypeNumberPad;
     [inputViewField becomeFirstResponder];
+    inputViewField.text = activeArray[indexPath][activeTime];
     inputType = PCInputtypeTime;
     editRow = indexPath;
 }
@@ -238,20 +244,22 @@
     UIButton *addButton = [UIButton buttonWithType:UIButtonTypeSystem];
     addButton.frame = CGRectMake(0, 0, 160, 44);
     [addButton setTitle:@"增加項目" forState:UIControlStateNormal];
-    [addButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [addButton setTitleColor:[UIColor colorNamed:kMainColor] forState:UIControlStateNormal];
     [addButton setBackgroundColor:[UIColor blackColor]];
     [addButton addTarget:self action:@selector(addRowAction) forControlEvents:UIControlEventTouchUpInside];
-    
+    [headerView addSubview:addButton];
+
+    /*
     UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeSystem];
     deleteButton.frame = CGRectMake(160, 0, 160, 44);
     [deleteButton setTitle:@"編輯項目" forState:UIControlStateNormal];
-    [deleteButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [deleteButton setTitleColor:[UIColor colorNamed:kMainColor] forState:UIControlStateNormal];
     [deleteButton setBackgroundColor:[UIColor blackColor]];
     [deleteButton addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
+     [headerView addSubview:deleteButton];
+     */
 
     
-    [headerView addSubview:addButton];
-    [headerView addSubview:deleteButton];
 
     return headerView;
 }

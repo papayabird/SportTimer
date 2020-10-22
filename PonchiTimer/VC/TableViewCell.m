@@ -27,6 +27,10 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
+    self.activeName.titleLabel.numberOfLines = 1;
+    self.activeName.titleLabel.adjustsFontSizeToFitWidth = true;
+    self.activeName.titleLabel.lineBreakMode = NSLineBreakByClipping; //<-- MAGIC LINE
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

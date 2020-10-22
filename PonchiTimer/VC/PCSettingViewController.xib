@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment version="4352" identifier="iOS"/>
+        <deployment version="4368" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,8 +34,8 @@
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="設定" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcK-FD-SLG">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
-                            <color key="backgroundColor" red="0.95682239532470703" green="0.0" blue="0.12225879728794098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                            <color key="backgroundColor" red="0.85098039215686272" green="0.30588235294117649" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -65,22 +65,6 @@
                         <action selector="startAction:" destination="-1" eventType="touchUpInside" id="TUP-lp-yMu"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssg-e6-RZq">
-                    <rect key="frame" x="153.66666666666666" y="80" width="106.99999999999997" height="50"/>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="107" id="Zxo-FQ-agE"/>
-                        <constraint firstAttribute="height" constant="50" id="n9k-24-Q1s"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" title="Mode2">
-                        <color key="titleColor" red="0.95682239532470703" green="0.0" blue="0.12225879728794098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="startAction:" destination="-1" eventType="touchUpInside" id="ocF-sZ-Iq6"/>
-                    </connections>
-                </button>
                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNp-qy-qzt">
                     <rect key="frame" x="260.66666666666669" y="80" width="107" height="50"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -97,27 +81,20 @@
                         <action selector="startAction:" destination="-1" eventType="touchUpInside" id="zY3-2b-pBv"/>
                     </connections>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JRt-67-QNv">
-                    <rect key="frame" x="47" y="199" width="320" height="479"/>
-                    <color key="backgroundColor" red="0.95682239532470703" green="0.0" blue="0.12225879728794098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="Yr7-Iq-FPR"/>
-                        <outlet property="delegate" destination="-1" id="Y6i-3m-YIp"/>
-                    </connections>
-                </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="se0-Cq-IcB">
-                    <rect key="frame" x="0.0" y="676" width="414" height="60"/>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssg-e6-RZq">
+                    <rect key="frame" x="153.66666666666666" y="80" width="106.99999999999997" height="50"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="z34-wb-rwg"/>
+                        <constraint firstAttribute="width" constant="107" id="Zxo-FQ-agE"/>
+                        <constraint firstAttribute="height" constant="50" id="n9k-24-Q1s"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                    <state key="normal" title="Back">
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="Mode2">
                         <color key="titleColor" red="0.95682239532470703" green="0.0" blue="0.12225879728794098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
-                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="4C0-ag-wO5"/>
+                        <action selector="startAction:" destination="-1" eventType="touchUpInside" id="ocF-sZ-Iq6"/>
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-dZ-OSy">
@@ -185,15 +162,38 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.95682239532470703" green="0.0" blue="0.12225879728794098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.85098039215686272" green="0.30588235294117649" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="320" id="TO0-rI-eC9"/>
                         <constraint firstAttribute="height" constant="70" id="d2F-qG-m8W"/>
                     </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JRt-67-QNv">
+                    <rect key="frame" x="47" y="199" width="320" height="479"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Yr7-Iq-FPR"/>
+                        <outlet property="delegate" destination="-1" id="Y6i-3m-YIp"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="se0-Cq-IcB">
+                    <rect key="frame" x="0.0" y="676" width="414" height="60"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="z34-wb-rwg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                    <state key="normal" title="Back">
+                        <color key="titleColor" red="0.85098039215686272" green="0.30588235294117649" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="4C0-ag-wO5"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="9ra-uF-C0E"/>
-            <color key="backgroundColor" red="0.95682239532470703" green="0.0" blue="0.12225879728794098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="JRt-67-QNv" firstAttribute="bottom" secondItem="se0-Cq-IcB" secondAttribute="top" constant="2" id="1sg-N9-Cn0"/>
                 <constraint firstItem="9Un-lf-iNi" firstAttribute="top" secondItem="iuq-So-2DC" secondAttribute="bottom" id="2Mt-fY-dbH"/>

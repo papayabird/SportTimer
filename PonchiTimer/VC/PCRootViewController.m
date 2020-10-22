@@ -39,7 +39,6 @@
     }
     
     PCDetailViewController *detailVC = [[PCDetailViewController alloc] initWithType:statusType];
-
     [self presentViewController:detailVC animated:YES completion:^{
         
     }];

@@ -147,33 +147,12 @@
 		D031ABA21AF79FA0009F3AC1 /* PonchiTimer */ = {
 			isa = PBXGroup;
 			children = (
-				D0DFB92E1AF8B28D0056D3F9 /* mouse_click.mp3 */,
 				D031ABA71AF79FA0009F3AC1 /* AppDelegate.h */,
 				D031ABA81AF79FA0009F3AC1 /* AppDelegate.m */,
-				D06EEE4F1AF9B895001101D1 /* PCBasicViewController.h */,
-				D06EEE501AF9B895001101D1 /* PCBasicViewController.m */,
-				D0DFB9331AF8BB020056D3F9 /* SpeechUtteranceViewController.h */,
-				D0DFB9341AF8BB020056D3F9 /* SpeechUtteranceViewController.m */,
-				D0DFB9301AF8B7040056D3F9 /* UIView+Toast.h */,
-				D0DFB9311AF8B7040056D3F9 /* UIView+Toast.m */,
-				D0DFB9291AF87EF70056D3F9 /* IHAlertView.h */,
-				D0DFB92A1AF87EF70056D3F9 /* IHAlertView.m */,
-				D031ABD81AF7A4C1009F3AC1 /* UIButton+style.h */,
-				D031ABD91AF7A4C1009F3AC1 /* UIButton+style.m */,
-				D031ABC91AF7A023009F3AC1 /* PCRootViewController.h */,
-				D031ABCA1AF7A023009F3AC1 /* PCRootViewController.m */,
-				D031ABCB1AF7A023009F3AC1 /* PCRootViewController.xib */,
-				D031ABCE1AF7A18E009F3AC1 /* PCDetailViewController.h */,
-				D031ABCF1AF7A18E009F3AC1 /* PCDetailViewController.m */,
-				D031ABD01AF7A18E009F3AC1 /* PCDetailViewController.xib */,
-				D031ABD31AF7A19C009F3AC1 /* PCSettingViewController.h */,
-				D031ABD41AF7A19C009F3AC1 /* PCSettingViewController.m */,
-				D031ABD51AF7A19C009F3AC1 /* PCSettingViewController.xib */,
-				D031ABDB1AF7A740009F3AC1 /* TableViewCell.h */,
-				D031ABDC1AF7A740009F3AC1 /* TableViewCell.m */,
-				D031ABDD1AF7A740009F3AC1 /* TableViewCell.xib */,
-				D0DFE7D625402E0D00EFE520 /* Utils.h */,
-				D0DFE7D725402E0D00EFE520 /* Utils.m */,
+				D0C22E21254125C6008679DA /* Library */,
+				D0C22E20254125B4008679DA /* Manager */,
+				D0C22E1F25412599008679DA /* VC */,
+				D0DFB92E1AF8B28D0056D3F9 /* mouse_click.mp3 */,
 				D031ABB01AF79FA0009F3AC1 /* Images.xcassets */,
 				D031ABA31AF79FA0009F3AC1 /* Supporting Files */,
 			);
@@ -205,6 +184,51 @@
 				D031ABBE1AF79FA0009F3AC1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0C22E1F25412599008679DA /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				D06EEE4F1AF9B895001101D1 /* PCBasicViewController.h */,
+				D06EEE501AF9B895001101D1 /* PCBasicViewController.m */,
+				D031ABC91AF7A023009F3AC1 /* PCRootViewController.h */,
+				D031ABCA1AF7A023009F3AC1 /* PCRootViewController.m */,
+				D031ABCB1AF7A023009F3AC1 /* PCRootViewController.xib */,
+				D031ABCE1AF7A18E009F3AC1 /* PCDetailViewController.h */,
+				D031ABCF1AF7A18E009F3AC1 /* PCDetailViewController.m */,
+				D031ABD01AF7A18E009F3AC1 /* PCDetailViewController.xib */,
+				D031ABD31AF7A19C009F3AC1 /* PCSettingViewController.h */,
+				D031ABD41AF7A19C009F3AC1 /* PCSettingViewController.m */,
+				D031ABD51AF7A19C009F3AC1 /* PCSettingViewController.xib */,
+				D031ABDB1AF7A740009F3AC1 /* TableViewCell.h */,
+				D031ABDC1AF7A740009F3AC1 /* TableViewCell.m */,
+				D031ABDD1AF7A740009F3AC1 /* TableViewCell.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		D0C22E20254125B4008679DA /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D0DFB9301AF8B7040056D3F9 /* UIView+Toast.h */,
+				D0DFB9311AF8B7040056D3F9 /* UIView+Toast.m */,
+				D0DFB9291AF87EF70056D3F9 /* IHAlertView.h */,
+				D0DFB92A1AF87EF70056D3F9 /* IHAlertView.m */,
+				D031ABD81AF7A4C1009F3AC1 /* UIButton+style.h */,
+				D031ABD91AF7A4C1009F3AC1 /* UIButton+style.m */,
+				D0DFE7D625402E0D00EFE520 /* Utils.h */,
+				D0DFE7D725402E0D00EFE520 /* Utils.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		D0C22E21254125C6008679DA /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				D0DFB9331AF8BB020056D3F9 /* SpeechUtteranceViewController.h */,
+				D0DFB9341AF8BB020056D3F9 /* SpeechUtteranceViewController.m */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,10 +296,9 @@
 			};
 			buildConfigurationList = D031AB9B1AF79FA0009F3AC1 /* Build configuration list for PBXProject "PonchiTimer" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -388,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -425,7 +448,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -440,6 +463,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = R5TFMRHGKB;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -450,6 +474,7 @@
 				INFOPLIST_FILE = PonchiTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ponchi.ponchitimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -464,6 +489,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = R5TFMRHGKB;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -474,6 +500,7 @@
 				INFOPLIST_FILE = PonchiTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ponchi.ponchitimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
