@@ -13,7 +13,9 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #import <UserNotifications/UserNotifications.h>
+#import "StringDefine.h"
 #import "Utils.h"
+#import "LanguageTool.h"
 
 
 #define kLightColor @"LightColor"
@@ -21,5 +23,12 @@
 #define kMainColor @"MainColor"
 
 #define UIColorFromHex(hex) [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16))/255.0 green:((float)((hex & 0xFF00) >> 8))/255.0 blue:((float)(hex & 0xFF))/255.0 alpha:1.0]
+
+
+//UserDefaults
+#define kIsFirstIntoAppUserDefaults @"IsFirstIntoAppUserDefaults"
+#define kLanguageSetUserDefaults @"langeuageset"
+
+
 
 #endif /* PrefixHeader_pch */

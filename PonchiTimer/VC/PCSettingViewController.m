@@ -95,7 +95,7 @@
 - (IBAction)repeatAction:(id)sender
 {
     [alert displayViewAtCenter:inputView];
-    inputViewTitle.text = @"請輸入循環次數";
+    inputViewTitle.text = GetStringWithKeyFromTable(kInput_Repeat_Time,kLocalizable);
     inputViewField.keyboardType = UIKeyboardTypeNumberPad;
     [inputViewField becomeFirstResponder];
     inputType = PCInputtypeRepeatCount;
@@ -166,7 +166,7 @@
 -(void)selectModeActions:(int)indexPath
 {
     [alert displayViewAtCenter:inputView];
-    inputViewTitle.text = @"請輸入運動名稱";
+    inputViewTitle.text = GetStringWithKeyFromTable(kInput_Active_Name,kLocalizable);
     inputViewField.keyboardType = UIKeyboardTypeDefault;
     [inputViewField becomeFirstResponder];;
     inputViewField.text = activeArray[indexPath][activeName];
@@ -177,10 +177,11 @@
 -(void)selectTimeActions:(int)indexPath
 {
     [alert displayViewAtCenter:inputView];
-    inputViewTitle.text = @"請輸入運動時間";
+    inputViewTitle.text = GetStringWithKeyFromTable(kInput_Active_Time,kLocalizable);
     inputViewField.keyboardType = UIKeyboardTypeNumberPad;
     [inputViewField becomeFirstResponder];
-    inputViewField.text = activeArray[indexPath][activeTime];
+    //數字就直接清掉
+//    inputViewField.text = activeArray[indexPath][activeTime];
     inputType = PCInputtypeTime;
     editRow = indexPath;
 }
@@ -242,8 +243,9 @@
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
     
     UIButton *addButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    addButton.frame = CGRectMake(0, 0, 160, 44);
-    [addButton setTitle:@"增加項目" forState:UIControlStateNormal];
+    addButton.frame = CGRectMake(0, 0, 320, 44);
+//    addButton.frame = CGRectMake(0, 0, 160, 44);
+    [addButton setTitle:GetStringWithKeyFromTable(kAdd_Item,kLocalizable) forState:UIControlStateNormal];
     [addButton setTitleColor:[UIColor colorNamed:kMainColor] forState:UIControlStateNormal];
     [addButton setBackgroundColor:[UIColor blackColor]];
     [addButton addTarget:self action:@selector(addRowAction) forControlEvents:UIControlEventTouchUpInside];
@@ -331,7 +333,7 @@
 - (void)addRowAction
 {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    [dict setObject:@"動茲動" forKey:activeName];
+    [dict setObject:GetStringWithKeyFromTable(kDefault_Active_Name,kLocalizable) forKey:activeName];
     [dict setObject:@"0" forKey:activeTime];
     [activeArray addObject:dict];
     [self reloadtableView];

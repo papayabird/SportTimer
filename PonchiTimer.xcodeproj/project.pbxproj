@@ -34,6 +34,8 @@
 		D0DFB9321AF8B7040056D3F9 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DFB9311AF8B7040056D3F9 /* UIView+Toast.m */; };
 		D0DFB9351AF8BB020056D3F9 /* SpeechUtteranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DFB9341AF8BB020056D3F9 /* SpeechUtteranceViewController.m */; };
 		D0DFE7D825402E0D00EFE520 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DFE7D725402E0D00EFE520 /* Utils.m */; };
+		D0F1208925415324007222B5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0F1208B25415324007222B5 /* Localizable.strings */; };
+		D0F120912541543B007222B5 /* LanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F120902541543B007222B5 /* LanguageTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,11 @@
 		D0DFE7D625402E0D00EFE520 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		D0DFE7D725402E0D00EFE520 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		D0EC22E91BE9A9700050C55F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		D0F1208A25415324007222B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D0F1208E25415328007222B5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D0F1208F2541543B007222B5 /* LanguageTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LanguageTool.h; sourceTree = "<group>"; };
+		D0F120902541543B007222B5 /* LanguageTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LanguageTool.m; sourceTree = "<group>"; };
+		D0F1209E25415A7C007222B5 /* StringDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringDefine.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +172,8 @@
 				D031ABA41AF79FA0009F3AC1 /* Info.plist */,
 				D031ABA51AF79FA0009F3AC1 /* main.m */,
 				D0EC22E91BE9A9700050C55F /* PrefixHeader.pch */,
+				D0F1209E25415A7C007222B5 /* StringDefine.h */,
+				D0F1208B25415324007222B5 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -218,6 +227,8 @@
 				D031ABD91AF7A4C1009F3AC1 /* UIButton+style.m */,
 				D0DFE7D625402E0D00EFE520 /* Utils.h */,
 				D0DFE7D725402E0D00EFE520 /* Utils.m */,
+				D0F1208F2541543B007222B5 /* LanguageTool.h */,
+				D0F120902541543B007222B5 /* LanguageTool.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -301,6 +312,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = D031AB971AF79FA0009F3AC1;
 			productRefGroup = D031ABA11AF79FA0009F3AC1 /* Products */;
@@ -321,6 +333,7 @@
 				D031ABD71AF7A19C009F3AC1 /* PCSettingViewController.xib in Resources */,
 				D031ABDF1AF7A740009F3AC1 /* TableViewCell.xib in Resources */,
 				D031ABD21AF7A18E009F3AC1 /* PCDetailViewController.xib in Resources */,
+				D0F1208925415324007222B5 /* Localizable.strings in Resources */,
 				D0DFB92F1AF8B28D0056D3F9 /* mouse_click.mp3 in Resources */,
 				D031ABB11AF79FA0009F3AC1 /* Images.xcassets in Resources */,
 				D031ABCD1AF7A023009F3AC1 /* PCRootViewController.xib in Resources */,
@@ -352,6 +365,7 @@
 				D0DFB92B1AF87EF70056D3F9 /* IHAlertView.m in Sources */,
 				D031ABD61AF7A19C009F3AC1 /* PCSettingViewController.m in Sources */,
 				D031ABA61AF79FA0009F3AC1 /* main.m in Sources */,
+				D0F120912541543B007222B5 /* LanguageTool.m in Sources */,
 				D031ABDA1AF7A4C1009F3AC1 /* UIButton+style.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +387,18 @@
 			targetProxy = D031ABBA1AF79FA0009F3AC1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D0F1208B25415324007222B5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0F1208A25415324007222B5 /* en */,
+				D0F1208E25415328007222B5 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D031ABC11AF79FA0009F3AC1 /* Debug */ = {
@@ -463,7 +489,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = R5TFMRHGKB;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -489,7 +515,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = R5TFMRHGKB;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

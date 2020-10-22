@@ -24,7 +24,7 @@
     
     UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* okAction = [UIAlertAction
-                           actionWithTitle:@"OK"
+                           actionWithTitle:GetStringWithKeyFromTable(kOK,kLocalizable)
                            style:UIAlertActionStyleDefault
                            handler:^(UIAlertAction * action)
                            {

@@ -84,9 +84,6 @@
     
     //初始化
     count = 0;
-//    for (NSDictionary *dict in activeArray) {
-//        sumSec += [dict [activeTime] intValue];
-//    }
     sumSec = [activeArray[0][activeTime] intValue];
     
     
@@ -113,7 +110,10 @@
 {
     //如果沒有設定排程就擋掉
     if ([activeArray count] == 0) {
-        [[Utils sharedManager] showOneBtnAlert:self title:@"請先設定排程" message:@"" completion:^{
+        [[Utils sharedManager] showOneBtnAlert:self
+                                         title:GetStringWithKeyFromTable(kPlease_Create_Schedule_First,kLocalizable)
+                                       message:@""
+                                    completion:^{
             [self dismissViewControllerAnimated:YES completion:^{}];
         }];
         return;
@@ -124,7 +124,6 @@
         //開始
         
         if (firstStart) {
-            [[AppDelegate sharedAppDelegate] setUserNotification];
             [self startTime];
             firstStart = NO;
             [self speakword:activeArray[count][activeName]];

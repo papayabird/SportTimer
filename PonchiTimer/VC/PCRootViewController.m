@@ -20,6 +20,11 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [[AppDelegate sharedAppDelegate] setUserNotification];
+}
+
 - (IBAction)startAction:(id)sender
 {
     int tag = (int)[sender tag];
