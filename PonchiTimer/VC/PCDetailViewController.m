@@ -91,14 +91,15 @@
         return;
     }
     
-    //開頭準備
-    [self addPrepareActive];
     
     //加總重複次數
     NSMutableArray *copyArray = [activeArray copy];
     for (int i = 0; i < repeatCount; i++) {
         [activeArray addObjectsFromArray:copyArray];
     }
+
+    //開頭準備,要在加總重複次數後面
+    [self addPrepareActive];
     
     //計算全部時間
     int timeSum = 0;

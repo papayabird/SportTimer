@@ -241,7 +241,7 @@ static NSString * BCP47LanguageCodeForString(NSString *string) {
 //    utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"apple"];
 
     //utterance.pitchMultiplier = 0.5f;
-    utterance.rate = AVSpeechUtteranceDefaultSpeechRate;
+    utterance.rate = 0.6;
     utterance.preUtteranceDelay = 0.1f;
     utterance.postUtteranceDelay = 0.1f;
     

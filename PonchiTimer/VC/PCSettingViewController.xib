@@ -48,7 +48,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Un-lf-iNi">
-                    <rect key="frame" x="46.666666666666657" y="80" width="107" height="50"/>
+                    <rect key="frame" x="47.666666666666657" y="80" width="107" height="50"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Kwi-zV-mZC"/>
@@ -174,7 +174,7 @@
                 <constraint firstItem="nAW-dZ-OSy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Jlh-Q5-g5e"/>
                 <constraint firstItem="JRt-67-QNv" firstAttribute="width" secondItem="nAW-dZ-OSy" secondAttribute="width" id="LGk-6U-Psd"/>
                 <constraint firstItem="nAW-dZ-OSy" firstAttribute="top" secondItem="Ssg-e6-RZq" secondAttribute="bottom" constant="-1" id="MRW-Zm-jQr"/>
-                <constraint firstItem="9Un-lf-iNi" firstAttribute="trailing" secondItem="Ssg-e6-RZq" secondAttribute="leading" id="XHx-Ce-bkn"/>
+                <constraint firstItem="9Un-lf-iNi" firstAttribute="trailing" secondItem="Ssg-e6-RZq" secondAttribute="leading" constant="1" id="XHx-Ce-bkn"/>
                 <constraint firstItem="iuq-So-2DC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fOs-Gz-wns"/>
                 <constraint firstItem="se0-Cq-IcB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jSs-Y0-MhN"/>
                 <constraint firstItem="9ra-uF-C0E" firstAttribute="bottom" secondItem="se0-Cq-IcB" secondAttribute="bottom" id="kUp-z5-iBc"/>
