@@ -37,7 +37,8 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [[AppDelegate sharedAppDelegate] setUserNotification];
+    //本地推播先不要
+//    [[AppDelegate sharedAppDelegate] setUserNotification];
 }
 
 - (void)prepareUI {

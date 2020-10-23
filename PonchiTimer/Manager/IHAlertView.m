@@ -76,11 +76,12 @@
                                              selector:@selector(keyboardDidShow:)
                                                  name:UIKeyboardDidShowNotification
                                                object:nil];
-    
+    /*
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardDidShow:)
                                                  name:UIKeyboardDidChangeFrameNotification
                                                object:nil];
+     */
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardDidHide:)
@@ -104,9 +105,11 @@
 
 - (void)keyboardDidHide: (NSNotification *) notification
 {
+    /*
     CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     int keyboardHeight = MIN(keyboardSize.height, keyboardSize.width);
-    displayView.frame = CGRectMake((coverAllWindowView.frame.size.width - displayView.frame.size.width)/2, /*(coverAllWindowView.frame.size.height - displayView.frame.size.height)/2*/ 74, displayView.bounds.size.width, displayView.bounds.size.height);
+    displayView.frame = CGRectMake((coverAllWindowView.frame.size.width - displayView.frame.size.width)/2, 74, displayView.bounds.size.width, displayView.bounds.size.height);
+     */
 }
 
 
