@@ -23,6 +23,8 @@
     __weak IBOutlet UIButton *buttonMode3;
     __weak IBOutlet UIButton *repeatCountbutton;
     __weak IBOutlet UILabel *totalTimeLabel;
+    __weak IBOutlet UISwitch *resetSwitch;
+    __weak IBOutlet UIButton *resetTimeBtn;
     
     BOOL editBool;
     int editRow;
@@ -34,6 +36,9 @@
     
     //repeatCount
     int repeatCount;
+    
+    //resetTime
+    int resetTime;
 }
 
 @end
@@ -69,6 +74,9 @@
     
     alert = [[IHAlertView alloc] init];
     alert.delegate = self;
+    
+    resetSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:kAytoResetItemUserDefaults];
+
 }
 
 - (IBAction)startAction:(id)sender
@@ -131,6 +139,7 @@
 {
     [settingTableView reloadData];
     [self reloadRepeatCountlabel];
+    [self reloadResetTimelabel];
     [self reloadTimeLabel];
 }
 
@@ -152,6 +161,11 @@
 - (void)reloadRepeatCountlabel
 {
     [repeatCountbutton setTitle:[NSString stringWithFormat:@"%i",repeatCount] forState:UIControlStateNormal];
+}
+
+- (void)reloadResetTimelabel
+{
+    [resetTimeBtn setTitle:[NSString stringWithFormat:@"%i",resetTime] forState:UIControlStateNormal];
 }
 
 - (void)saveData
@@ -214,20 +228,12 @@
 
 - (IBAction)inputCancel:(id)sender
 {
-    if (!alert.isAnimationDone) {
-        return;
-    }
-    
     inputViewField.text = @"";
     [alert removeAlert];
 }
 
 - (IBAction)inputSave:(id)sender
 {
-    if (!alert.isAnimationDone) {
-        return;
-    }
-    
     if (inputViewField.text.length != 0) {
         
         if (inputType == PCInputtypeName) {
@@ -244,9 +250,13 @@
                 [activeArray replaceObjectAtIndex:editRow withObject:dict];
             }
         }
-        else {
+        else if (inputType == PCInputtypeRepeatCount){
             if ([self isPureInt:inputViewField.text]) {
                 repeatCount = [inputViewField.text intValue];
+            }
+        }else if (inputType == PCInputtypeResetTime) {
+            if ([self isPureInt:inputViewField.text]) {
+                resetTime = [inputViewField.text intValue];
             }
         }
         [self reloadtableView];
@@ -262,6 +272,30 @@
     return[scan scanInt:&val] && [scan isAtEnd];
 }
 
+- (IBAction)resetSwitchAction:(id)sender {
+    UISwitch *resetSwitch = (UISwitch *)sender;
+    if (resetSwitch.on) {
+        resetTimeBtn.userInteractionEnabled = YES;
+        resetTimeBtn.alpha = 1.0f;
+    }else {
+        resetTimeBtn.userInteractionEnabled = NO;
+        resetTimeBtn.alpha = 0.5f;
+    }
+    [[NSUserDefaults standardUserDefaults] setBool:resetSwitch.on forKey:kAytoResetItemUserDefaults];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (IBAction)resetTimeAction:(id)sender {
+    
+    [alert displayViewAtCenter:inputView];
+    inputViewTitle.text = GetStringWithKeyFromTable(kInput_Active_Time,kLocalizable);
+    inputViewField.keyboardType = UIKeyboardTypeNumberPad;
+    [inputViewField becomeFirstResponder];
+    //數字就直接清掉
+//    inputViewField.text = activeArray[indexPath][activeTime];
+    inputType = PCInputtypeResetTime;
+}
+
 #pragma mark - UITableView Delegate & Datasource
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -272,6 +306,7 @@
     addButton.frame = CGRectMake(0, 0, 320, 44);
 //    addButton.frame = CGRectMake(0, 0, 160, 44);
     [addButton setTitle:GetStringWithKeyFromTable(kAdd_Item,kLocalizable) forState:UIControlStateNormal];
+    addButton.titleLabel.font = [UIFont systemFontOfSize:20.0f];
     [addButton setTitleColor:[UIColor colorNamed:kMainColor] forState:UIControlStateNormal];
     [addButton setBackgroundColor:[UIColor blackColor]];
     [addButton addTarget:self action:@selector(addRowAction) forControlEvents:UIControlEventTouchUpInside];
@@ -362,7 +397,21 @@
     [dict setObject:GetStringWithKeyFromTable(kDefault_Active_Name,kLocalizable) forKey:activeName];
     [dict setObject:@"0" forKey:activeTime];
     [activeArray addObject:dict];
+    
+    //如果有自動插入休息
+    if (resetSwitch.on) {
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        [dict setObject:GetStringWithKeyFromTable(kDefault_Reset_Name,kLocalizable) forKey:activeName];
+        [dict setObject:resetTimeBtn.titleLabel.text  forKey:activeTime];
+        [activeArray addObject:dict];
+    }
+    
     [self reloadtableView];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[activeArray count] - 1 inSection:0];
+    [settingTableView scrollToRowAtIndexPath:indexPath
+                         atScrollPosition:UITableViewScrollPositionTop
+                                 animated:YES];
 }
 
 - (void)deleteAction:(UIButton *)button

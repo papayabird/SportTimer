@@ -38,7 +38,7 @@
     UIColor *anotherColor = [UIColor colorNamed:kMiddleColor];
     UIColor *darkColor = [UIColor colorNamed:kMainColor];
     layer.colors = @[(id)lightColor.CGColor, (id)middleColor.CGColor, (id)anotherColor.CGColor, (id)darkColor.CGColor];
-    layer.locations = @[@(0), @(0.2), @(0.65), @(1)];
+    layer.locations = @[@(0), @(0.1), @(0.65), @(1)];
     [self.view.layer insertSublayer:layer atIndex:0];
 }
 

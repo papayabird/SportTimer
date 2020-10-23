@@ -18,16 +18,14 @@
 -(void)displayViewAtCenter:(UIView *)theView
 {
     [self addObserverOnKeyboard];
-    
-    UIViewController *mycon = (UIViewController *)self.delegate;
-    
+        
     //基底
     for (UIView *view in coverAllWindowView.subviews) {
         [view removeFromSuperview];
     }
-    coverAllWindowView = [[UIView alloc] initWithFrame:mycon.view.frame];
+    coverAllWindowView = [[UIView alloc] initWithFrame:[AppDelegate sharedAppDelegate].window.frame];
     coverAllWindowView.backgroundColor = [UIColor clearColor];
-    [mycon.view addSubview:coverAllWindowView];
+    [[AppDelegate sharedAppDelegate].window addSubview:coverAllWindowView];
     
     //黑層
     UIView *blackAllWindow = [[UIView alloc] initWithFrame:coverAllWindowView.bounds];
@@ -55,30 +53,10 @@
     displayView.layer.shadowOffset = CGSizeMake(3.0f, 3.0f);
     displayView.alpha = 0;
     [coverAllWindowView addSubview:displayView];
-    
-    [UIView animateWithDuration:0
-                          delay:0
-                        options:UIViewAnimationOptionCurveEaseOut
-                     animations:^{
-                         //放大
-                         displayView.transform = CGAffineTransformMake(1.2, 0, 0, 1.2, 0, 0);
-                     } completion:^(BOOL finished) {
-                         [UIView animateWithDuration:animationTime animations:^{
-                             displayView.alpha = 1;
-                             //還原
-                             displayView.transform = CGAffineTransformMake(1, 0, 0, 1, 0, 0);
-                         } completion:^(BOOL finished) {
-                             
-                         }];
-                     }];
-
 }
 
 - (void)tapAction:(UITapGestureRecognizer *)recognizer
 {
-    if (!self.isAnimationDone) {
-        return;
-    }
     UIView *view = [recognizer view];
     [view.superview removeFromSuperview];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -120,26 +98,15 @@
     float sizeY = coverAllWindowView.frame.size.height - keyboardHeight - spaceHeight - displayView.frame.size.height;
     sizeY = MAX(0, sizeY);
     
-    [UIView animateWithDuration:0.3 animations:^{
-        self.isAnimationDone = NO;
-        displayView.frame = CGRectMake(displayView.frame.origin.x, sizeY, displayView.frame.size.width, displayView.frame.size.height);
-    } completion:^(BOOL finished) {
-        self.isAnimationDone = YES;
-    }];
-    
+    displayView.frame = CGRectMake(displayView.frame.origin.x, sizeY, displayView.frame.size.width, displayView.frame.size.height);
+    displayView.alpha = 1;
 }
 
 - (void)keyboardDidHide: (NSNotification *) notification
 {
     CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     int keyboardHeight = MIN(keyboardSize.height, keyboardSize.width);
-    
-    [UIView animateWithDuration:0.3 animations:^{
-        self.isAnimationDone = NO;
-        displayView.frame = CGRectMake((coverAllWindowView.frame.size.width - displayView.frame.size.width)/2, /*(coverAllWindowView.frame.size.height - displayView.frame.size.height)/2*/ 74, displayView.bounds.size.width, displayView.bounds.size.height);
-    }completion:^(BOOL finished) {
-        self.isAnimationDone = YES;
-    }];
+    displayView.frame = CGRectMake((coverAllWindowView.frame.size.width - displayView.frame.size.width)/2, /*(coverAllWindowView.frame.size.height - displayView.frame.size.height)/2*/ 74, displayView.bounds.size.width, displayView.bounds.size.height);
 }
 
 

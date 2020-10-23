@@ -13,7 +13,8 @@
 typedef NS_ENUM(NSInteger, PCInputtype) {
     PCInputtypeRepeatCount = 0,
     PCInputtypeName = 1,
-    PCInputtypeTime = 2
+    PCInputtypeTime = 2,
+    PCInputtypeResetTime = 3
 };
 
 @interface PCSettingViewController : PCBasicViewController <UITableViewDataSource, UITableViewDelegate, TableCellDelegate>
