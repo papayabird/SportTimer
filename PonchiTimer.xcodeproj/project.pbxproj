@@ -72,6 +72,7 @@
 		D031ABDB1AF7A740009F3AC1 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		D031ABDC1AF7A740009F3AC1 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		D031ABDD1AF7A740009F3AC1 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		D0518A832542BA7D00C9E70C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D06EEE411AF9B819001101D1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D06EEE431AF9B822001101D1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D06EEE451AF9B828001101D1 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -93,7 +94,6 @@
 		D0DFE7D725402E0D00EFE520 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		D0EC22E91BE9A9700050C55F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		D0F1208A25415324007222B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D0F1208E25415328007222B5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D0F1208F2541543B007222B5 /* LanguageTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LanguageTool.h; sourceTree = "<group>"; };
 		D0F120902541543B007222B5 /* LanguageTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LanguageTool.m; sourceTree = "<group>"; };
 		D0F1209E25415A7C007222B5 /* StringDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringDefine.h; sourceTree = "<group>"; };
@@ -393,7 +393,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D0F1208A25415324007222B5 /* en */,
-				D0F1208E25415328007222B5 /* zh-Hant */,
+				D0518A832542BA7D00C9E70C /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -489,7 +489,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = R5TFMRHGKB;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -515,7 +515,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = R5TFMRHGKB;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

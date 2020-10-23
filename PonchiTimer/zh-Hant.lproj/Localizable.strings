@@ -5,3 +5,19 @@
   Created by papayabird on 2020/10/22.
   Copyright © 2020 papayabird. All rights reserved.
 */
+
+//Button
+"確定" = "OK";
+"取消" = "CANCEL";
+
+//Label
+"語言設定" = "Language Settings";
+"設定" = "Settings";
+
+//Language item
+"英文" = "English";
+"繁體中文" = "Chinese(Traditional)";
+
+//Alert word
+"確認選擇的語言" = "Confirm your chooese";
+"請先設定排程" = "Please create schedule first";

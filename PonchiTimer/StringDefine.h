@@ -20,13 +20,16 @@
 //System Dont Fix
 
 //Root VC
+#define kMode1 @"組別1"
+#define kMode2 @"組別2"
+#define kMode3 @"組別3"
+#define kSchelud @"排程設定"
+#define kTitle @"燃脂計時APP"
 
 //Detail VC
 #define kPlease_Create_Schedule_First @"請先設定排程"
 #define kPrepareName @"準備囉"
 #define kPrepareTime @"5"
-
-
 
 //Schedule VC
 #define kInput_Active_Name @"請輸入運動名稱"
@@ -36,8 +39,6 @@
 #define kDefault_Active_Name @"動茲動"
 #define kDefault_Reset_Name @"休息"
 
-
-
 //Language VC
 #define kEnglish_Text @"英文"
 #define kChinese_Traditional_Text @"繁體中文"
@@ -46,10 +47,8 @@
 //Btn
 #define kBack @"返回"
 
-
 //General
 #define kOK @"確定"
 #define kCancel @"取消"
-
 
 #endif /* StringDefine_h */

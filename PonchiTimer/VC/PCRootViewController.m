@@ -27,6 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    
+    [[LanguageTool sharedInstance] setNewLanguage:kChinese_Traditional];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -42,7 +45,11 @@
 }
 
 - (void)prepareUI {
-    
+    titleLabel.text = GetStringWithKeyFromTable(kTitle,kLocalizable);
+    [mode1Btn setTitle:GetStringWithKeyFromTable(kMode1,kLocalizable) forState:UIControlStateNormal];
+    [mode2Btn setTitle:GetStringWithKeyFromTable(kMode2,kLocalizable) forState:UIControlStateNormal];
+    [mode3Btn setTitle:GetStringWithKeyFromTable(kMode3,kLocalizable) forState:UIControlStateNormal];
+    [scheduleBtn setTitle:GetStringWithKeyFromTable(kSchelud,kLocalizable) forState:UIControlStateNormal];
 }
 
 - (IBAction)startAction:(id)sender

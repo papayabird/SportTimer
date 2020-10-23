@@ -77,6 +77,13 @@
     
     resetSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:kAytoResetItemUserDefaults];
 
+    [self prepareUI];
+}
+
+- (void)prepareUI {
+    [buttonMode1 setTitle:GetStringWithKeyFromTable(kMode1,kLocalizable) forState:UIControlStateNormal];
+    [buttonMode2 setTitle:GetStringWithKeyFromTable(kMode2,kLocalizable) forState:UIControlStateNormal];
+    [buttonMode3 setTitle:GetStringWithKeyFromTable(kMode3,kLocalizable) forState:UIControlStateNormal];
 }
 
 - (IBAction)startAction:(id)sender
