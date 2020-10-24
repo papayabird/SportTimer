@@ -31,10 +31,13 @@
 
     NSTimer *currentTimer;
     int currentTimeInt;
+    int totalTimeInt;
+    int singleItemTimeInt;
+    int ignoreTimeInt;
 
     BOOL firstStart;
     int count;
-    int sumSec;
+    int itemSumSec;
     AVAudioPlayer *sound;
     SpeechUtteranceViewController *speakVC;
 }
@@ -98,26 +101,23 @@
         [activeArray addObjectsFromArray:copyArray];
     }
 
-    //開頭準備,要在加總重複次數後面
-    [self addPrepareActive];
-    
     //計算全部時間
     int timeSum = 0;
-    
     for (NSMutableDictionary *dict in activeArray) {
-        
         timeSum += [dict[activeTime] intValue];
     }
+    totalTimeInt = timeSum;
     
-    int min = timeSum / 60;
-    int sec = timeSum % 60;
+    //開頭準備,要在加總重複次數&計算全部時間後面!!!
+    [self addPrepareActive];
     
-    totalTimeLabel.text = [NSString stringWithFormat:@"%i : %i",min,sec];
+    [self totalTime];
     
     //初始化
     count = 0;
-    sumSec = [activeArray[0][activeTime] intValue];
-    
+    itemSumSec = [activeArray[0][activeTime] intValue];
+    singleItemTimeInt = [activeArray[0][activeTime] intValue];
+    ignoreTimeInt = [kPrepareTime intValue];
     
     //聲音
     NSString *path2 = [[NSBundle mainBundle] pathForResource:@"mouse_click" ofType:@"mp3"];
@@ -163,6 +163,7 @@
             [self startTime];
             firstStart = NO;
             [self speakword:activeArray[count][activeName]];
+            
         }
         else {
             [currentTimer setFireDate:[NSDate distantPast]];
@@ -185,36 +186,34 @@
 
 - (BOOL)getTime
 {
-    NSLog(@"sumSec = %i",sumSec);
+    NSLog(@"itemSumSec = %i",itemSumSec);
     NSLog(@"currentTimeInt = %i",currentTimeInt);
-    if (sumSec == currentTimeInt) {
+    NSLog(@"singleItemTimeInt = %i",singleItemTimeInt);
+    NSLog(@"totalTimeInt = %i",totalTimeInt);
+
+    if (itemSumSec == currentTimeInt) {
         
         if (count == [activeArray count] - 1) {
             
         }
         else {
             count++;
-            sumSec += [activeArray[count][activeTime] intValue];
-            [self speakword:activeArray[count][activeName]];
+            itemSumSec += [activeArray[count][activeTime] intValue];
+            singleItemTimeInt = [activeArray[count][activeTime] intValue];
             [sound play];
             [displayTableArray removeObjectAtIndex:0];
             [progressTableView reloadData];
         }
-        
         return YES;
     }
-    else {
-        
+    
+    //念聲音要提早一秒,要判斷是不是剩最後一個,是的話不要抓
+    if ([displayTableArray count] > 1 && itemSumSec == currentTimeInt + 1) {
+        NSLog(@"activeArray[count + 1][activeName] = %@",activeArray[count + 1][activeName]);
+        [self speakword:activeArray[count + 1][activeName]];
     }
     
     [sound play];
-
-    if (count % 2 == 0 && count != 0) {
-    }
-    else {
- 
-    }
-
     return NO;
 }
 
@@ -224,18 +223,54 @@
     [[NSRunLoop mainRunLoop] addTimer:currentTimer forMode:NSRunLoopCommonModes];
 }
 
-- (void)currentTime
-{
-    currentTimeInt++;
-    
-    [self getTime];
-    
+- (void)totalTime {
+    int min = totalTimeInt / 60;
+    int sec = totalTimeInt % 60;
+    totalTimeLabel.text = [NSString stringWithFormat:@"%i : %i",min,sec];
+}
+
+- (void)singleItemTime {
+    /*原本是顯示運動時間,現在要改成每個item的時間
     int min = currentTimeInt / 60;
     int sec = currentTimeInt % 60;
-    
     currentTimeLabel.text = [NSString stringWithFormat:@"%i : %i",min,sec];
+     */
     
-    if ([totalTimeLabel.text isEqualToString:currentTimeLabel.text]) {
+    int min = singleItemTimeInt / 60;
+    int sec = singleItemTimeInt % 60;
+    currentTimeLabel.text = [NSString stringWithFormat:@"%i : %i",min,sec];
+}
+
+- (void)currentTime
+{
+    if (ignoreTimeInt != 0) {
+        //準備的時間要跳過不要計算
+        if (ignoreTimeInt == [kPrepareTime intValue]) {
+            [activeArray removeObjectAtIndex:0];
+            count = 0;
+            itemSumSec = [activeArray[0][activeTime] intValue];
+            singleItemTimeInt = [activeArray[0][activeTime] intValue];
+        }
+        //正式第一組念的時間
+        if (ignoreTimeInt == 1) {
+            [self speakword:activeArray[0][activeName]];
+            [displayTableArray removeObjectAtIndex:0];
+            [progressTableView reloadData];
+        }
+        ignoreTimeInt--;
+        [sound play];
+        return;
+    }
+    
+    currentTimeInt++;
+    totalTimeInt--;
+    singleItemTimeInt--;
+    
+    [self getTime];
+    [self totalTime];
+    [self singleItemTime];
+    
+    if (totalTimeInt == 0) {
         
         int finishedCount = [[[NSUserDefaults standardUserDefaults] objectForKey:FinishedUserDefaults] intValue];
         finishedCount++;
