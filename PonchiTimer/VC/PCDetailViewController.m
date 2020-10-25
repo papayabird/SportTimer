@@ -10,6 +10,8 @@
 #import "TableViewCell.h"
 #import "UIView+Toast.h"
 
+#define earlySec 2
+
 @interface PCDetailViewController ()
 
 {
@@ -36,9 +38,11 @@
     int ignoreTimeInt;
 
     BOOL firstStart;
+    BOOL firstRing;
     int count;
     int itemSumSec;
-    AVAudioPlayer *sound;
+    AVAudioPlayer *clickSoundAV;
+    AVAudioPlayer *startSoundAV;
     SpeechUtteranceViewController *speakVC;
 }
 
@@ -67,7 +71,7 @@
     // Do any additional setup after loading the view from its nib.
 
     firstStart = YES;
-    
+    firstRing = YES;
     activeDict = [NSMutableDictionary dictionaryWithContentsOfFile:[[AppDelegate sharedAppDelegate] getActivePlistPath]];
     
     switch (statusType) {
@@ -120,12 +124,20 @@
     ignoreTimeInt = [kPrepareTime intValue];
     
     //聲音
+
     NSString *path2 = [[NSBundle mainBundle] pathForResource:@"mouse_click" ofType:@"mp3"];
     AVAudioPlayer *aPlayer2 = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path2] error:NULL];
     AVAudioSession * avSession = [AVAudioSession sharedInstance];
     [avSession  setCategory:AVAudioSessionCategoryPlayback error:nil];
-    sound = aPlayer2;
-    [sound prepareToPlay];
+    clickSoundAV = aPlayer2;
+    [clickSoundAV prepareToPlay];
+
+    NSString *path1 = [[NSBundle mainBundle] pathForResource:@"start" ofType:@"mp3"];
+    AVAudioPlayer *aPlayer1 = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path1] error:NULL];
+    AVAudioSession * avSession1 = [AVAudioSession sharedInstance];
+    [avSession1  setCategory:AVAudioSessionCategoryPlayback error:nil];
+    startSoundAV = aPlayer1;
+    [startSoundAV prepareToPlay];
     
     displayTableArray = [NSMutableArray arrayWithArray:activeArray];
 }
@@ -163,7 +175,6 @@
             [self startTime];
             firstStart = NO;
             [self speakword:activeArray[count][activeName]];
-            
         }
         else {
             [currentTimer setFireDate:[NSDate distantPast]];
@@ -200,7 +211,8 @@
             count++;
             itemSumSec += [activeArray[count][activeTime] intValue];
             singleItemTimeInt = [activeArray[count][activeTime] intValue];
-            [sound play];
+            [startSoundAV play];
+//            [clickSoundAV play];
             [displayTableArray removeObjectAtIndex:0];
             [progressTableView reloadData];
         }
@@ -208,12 +220,12 @@
     }
     
     //念聲音要提早一秒,要判斷是不是剩最後一個,是的話不要抓
-    if ([displayTableArray count] > 1 && itemSumSec == currentTimeInt + 1) {
+    if ([displayTableArray count] > 1 && itemSumSec == currentTimeInt + earlySec) {
         NSLog(@"activeArray[count + 1][activeName] = %@",activeArray[count + 1][activeName]);
         [self speakword:activeArray[count + 1][activeName]];
     }
     
-    [sound play];
+    [clickSoundAV play];
     return NO;
 }
 
@@ -243,6 +255,7 @@
 
 - (void)currentTime
 {
+    NSLog(@"ignoreTimeInt = %i",ignoreTimeInt);
     if (ignoreTimeInt != 0) {
         //準備的時間要跳過不要計算
         if (ignoreTimeInt == [kPrepareTime intValue]) {
@@ -251,15 +264,21 @@
             itemSumSec = [activeArray[0][activeTime] intValue];
             singleItemTimeInt = [activeArray[0][activeTime] intValue];
         }
-        //正式第一組念的時間
-        if (ignoreTimeInt == 1) {
+#warning 正式第一組念的時間
+        if (ignoreTimeInt == earlySec) {
             [self speakword:activeArray[0][activeName]];
             [displayTableArray removeObjectAtIndex:0];
             [progressTableView reloadData];
         }
         ignoreTimeInt--;
-        [sound play];
+        [clickSoundAV play];
         return;
+    }
+    
+    if (firstRing) {
+#warning 正式第一組響鈴的時間
+        [startSoundAV play];
+        firstRing = NO;
     }
     
     currentTimeInt++;

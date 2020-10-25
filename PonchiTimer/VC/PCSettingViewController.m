@@ -88,48 +88,57 @@
 
 - (IBAction)startAction:(id)sender
 {
-    [self saveData];
-    
-    //轉換資料
-    int tag = (int)[sender tag];
-    
-    [self resetButtonType];
-    UIButton *btn = (UIButton *)sender;
-    btn.backgroundColor = [UIColor whiteColor];
-    btn.titleLabel.textColor = [UIColor blackColor];
-    
-    switch (tag) {
-        case 1:
-            statusType = PCStatusTypeMode1;
-            activeArray = activeDict[@"mode1"][activeArrayStr];
-            repeatCount = [activeDict[@"mode1"][activeRepeatCount] intValue];
-            break;
-        case 2:
-            statusType = PCStatusTypeMode2;
-            activeArray = activeDict[@"mode2"][activeArrayStr];
-            repeatCount = [activeDict[@"mode2"][activeRepeatCount] intValue];
-            break;
-        case 3:
-            statusType = PCStatusTypeMode3;
-            activeArray = activeDict[@"mode3"][activeArrayStr];
-            repeatCount = [activeDict[@"mode3"][activeRepeatCount] intValue];
-            break;
-        default:
-            break;
-    }
-    
-    [self reloadTimeLabel];
-    
-    [self reloadtableView];
+    [self saveData:^(bool isSuccess, NSString *errorStr) {
+        if (!isSuccess) {
+            [[Utils sharedManager] showOneBtnAlert:self title:errorStr message:@"" completion:^{
+            }];
+        }else {
+            //轉換資料
+            int tag = (int)[sender tag];
+            
+            [self resetButtonType];
+            UIButton *btn = (UIButton *)sender;
+            btn.backgroundColor = [UIColor whiteColor];
+            btn.titleLabel.textColor = [UIColor blackColor];
+            
+            switch (tag) {
+                case 1:
+                    statusType = PCStatusTypeMode1;
+                    activeArray = activeDict[@"mode1"][activeArrayStr];
+                    repeatCount = [activeDict[@"mode1"][activeRepeatCount] intValue];
+                    break;
+                case 2:
+                    statusType = PCStatusTypeMode2;
+                    activeArray = activeDict[@"mode2"][activeArrayStr];
+                    repeatCount = [activeDict[@"mode2"][activeRepeatCount] intValue];
+                    break;
+                case 3:
+                    statusType = PCStatusTypeMode3;
+                    activeArray = activeDict[@"mode3"][activeArrayStr];
+                    repeatCount = [activeDict[@"mode3"][activeRepeatCount] intValue];
+                    break;
+                default:
+                    break;
+            }
+            
+            [self reloadTimeLabel];
+            
+            [self reloadtableView];
+        }
+    }];
 }
 
 - (IBAction)backAction:(id)sender
 {
-    [self saveData];
-    
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-        
+    [self saveData:^(bool isSuccess, NSString *errorStr) {
+        if (isSuccess) {
+            [self dismissViewControllerAnimated:YES completion:^{
+            }];
+        }else {
+            [[Utils sharedManager] showOneBtnAlert:self title:errorStr message:@"" completion:^{
+                
+            }];
+        }
     }];
 }
 
@@ -175,8 +184,16 @@
     [resetTimeBtn setTitle:[NSString stringWithFormat:@"%i",resetTime] forState:UIControlStateNormal];
 }
 
-- (void)saveData
+- (void)saveData:(void (^)(bool isSuccess, NSString * errorStr))callback
 {
+    //判斷時間是否有0
+    for (NSDictionary *dict in activeArray) {
+        if ([dict[activeTime] isEqual:kActive_Time_Zero]) {
+            callback(NO, kDataCantZero);
+            return;
+        }
+    }
+    
     //儲存
     switch (statusType) {
         case 1:
@@ -195,7 +212,9 @@
             break;
     }
     
-    BOOL isSave = [activeDict writeToFile:[[AppDelegate sharedAppDelegate] getActivePlistPath] atomically:YES];
+    bool isSave = [activeDict writeToFile:[[AppDelegate sharedAppDelegate] getActivePlistPath] atomically:YES];
+    
+    callback(isSave, kSaveDataError);
 }
 
 - (void)resetButtonType

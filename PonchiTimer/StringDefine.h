@@ -28,7 +28,7 @@
 
 //Detail VC
 #define kPlease_Create_Schedule_First @"請先設定排程"
-#define kPrepareName @"準備囉"
+#define kPrepareName @"準備"
 #define kPrepareTime @"5"
 
 //Schedule VC
@@ -38,6 +38,9 @@
 #define kAdd_Item @"增加項目"
 #define kDefault_Active_Name @"動茲動"
 #define kDefault_Reset_Name @"休息"
+#define kSaveDataError @"數據儲存失敗"
+#define kDataCantZero @"時間不得為零"
+#define kActive_Time_Zero @"0"
 
 //Language VC
 #define kEnglish_Text @"英文"

@@ -31,10 +31,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iuq-So-2DC">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="設定" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcK-FD-SLG">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                             <color key="backgroundColor" red="0.85098039215686272" green="0.30588235294117649" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -43,7 +43,7 @@
                     </subviews>
                     <color key="backgroundColor" red="0.95682239532470703" green="0.0" blue="0.12225879728794098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="80" id="7Uz-jq-fOW"/>
+                        <constraint firstAttribute="height" constant="64" id="7Uz-jq-fOW"/>
                         <constraint firstItem="TcK-FD-SLG" firstAttribute="top" secondItem="iuq-So-2DC" secondAttribute="top" id="99K-fN-E0C"/>
                         <constraint firstItem="TcK-FD-SLG" firstAttribute="leading" secondItem="iuq-So-2DC" secondAttribute="leading" id="ELz-ty-yKU"/>
                         <constraint firstAttribute="trailing" secondItem="TcK-FD-SLG" secondAttribute="trailing" id="jAA-U1-hv0"/>
@@ -51,7 +51,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-dZ-OSy">
-                    <rect key="frame" x="47" y="80" width="320" height="119"/>
+                    <rect key="frame" x="47" y="64" width="320" height="119"/>
                     <subviews>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Un-lf-iNi">
                             <rect key="frame" x="0.0" y="0.0" width="107" height="50"/>
@@ -167,7 +167,7 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JRt-67-QNv">
-                    <rect key="frame" x="47" y="199" width="320" height="479"/>
+                    <rect key="frame" x="47" y="183" width="320" height="495"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Yr7-Iq-FPR"/>

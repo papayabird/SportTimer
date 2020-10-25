@@ -36,6 +36,7 @@
 		D0DFE7D825402E0D00EFE520 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DFE7D725402E0D00EFE520 /* Utils.m */; };
 		D0F1208925415324007222B5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0F1208B25415324007222B5 /* Localizable.strings */; };
 		D0F120912541543B007222B5 /* LanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F120902541543B007222B5 /* LanguageTool.m */; };
+		E9EEBB6E25456597002495E6 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E9EEBB6D25456597002495E6 /* start.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		D0F1208F2541543B007222B5 /* LanguageTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LanguageTool.h; sourceTree = "<group>"; };
 		D0F120902541543B007222B5 /* LanguageTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LanguageTool.m; sourceTree = "<group>"; };
 		D0F1209E25415A7C007222B5 /* StringDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringDefine.h; sourceTree = "<group>"; };
+		E9EEBB6D25456597002495E6 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				D0C22E20254125B4008679DA /* Manager */,
 				D0C22E1F25412599008679DA /* VC */,
 				D0DFB92E1AF8B28D0056D3F9 /* mouse_click.mp3 */,
+				E9EEBB6D25456597002495E6 /* start.mp3 */,
 				D031ABB01AF79FA0009F3AC1 /* Images.xcassets */,
 				D031ABA31AF79FA0009F3AC1 /* Supporting Files */,
 			);
@@ -335,6 +338,7 @@
 				D031ABD21AF7A18E009F3AC1 /* PCDetailViewController.xib in Resources */,
 				D0F1208925415324007222B5 /* Localizable.strings in Resources */,
 				D0DFB92F1AF8B28D0056D3F9 /* mouse_click.mp3 in Resources */,
+				E9EEBB6E25456597002495E6 /* start.mp3 in Resources */,
 				D031ABB11AF79FA0009F3AC1 /* Images.xcassets in Resources */,
 				D031ABCD1AF7A023009F3AC1 /* PCRootViewController.xib in Resources */,
 			);
