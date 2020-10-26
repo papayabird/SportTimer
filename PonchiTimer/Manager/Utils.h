@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)sharedManager;
 
 - (void)showOneBtnAlert:(UIViewController *)delegate title:(NSString *)title message:(NSString *)message completion:(void (^)())callback;
+- (UIColor *)getContrastColor:(UIColor *)color;
+- (UIColor *)getCellTextColor:(UIColor *)color;
+- (UIColor *)getCellBGColor:(UIColor *)color;
 
 @end
 

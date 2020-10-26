@@ -36,4 +36,40 @@
     [delegate presentViewController:errorAlert animated:YES completion:nil];
 }
 
+- (UIColor *)getContrastColor:(UIColor *)color {
+    
+    if ([color isEqual:[UIColor colorNamed:@"Mode1Color"]]) {
+        return [UIColor colorNamed:@"Mode2Color"];
+    }else if ([color isEqual:[UIColor colorNamed:@"Mode2Color"]]) {
+        return [UIColor colorNamed:@"Mode3Color"];
+    }else if ([color isEqual:[UIColor colorNamed:@"Mode3Color"]]) {
+        return [UIColor colorNamed:@"Mode1Color"];
+    }
+    return [UIColor clearColor];
+}
+
+- (UIColor *)getCellTextColor:(UIColor *)color {
+    
+    if ([color isEqual:[UIColor colorNamed:@"Mode1Color"]]) {
+        return [UIColor colorNamed:@"Mode1TextColor"];
+    }else if ([color isEqual:[UIColor colorNamed:@"Mode2Color"]]) {
+        return [UIColor colorNamed:@"Mode2TextColor"];
+    }else if ([color isEqual:[UIColor colorNamed:@"Mode3Color"]]) {
+        return [UIColor colorNamed:@"Mode3TextColor"];
+    }
+    return [UIColor blackColor];
+}
+
+- (UIColor *)getCellBGColor:(UIColor *)color {
+    
+    if ([color isEqual:[UIColor colorNamed:@"Mode1Color"]]) {
+        return [UIColor colorNamed:@"Mode1BGColor"];
+    }else if ([color isEqual:[UIColor colorNamed:@"Mode2Color"]]) {
+        return [UIColor colorNamed:@"Mode2BGColor"];
+    }else if ([color isEqual:[UIColor colorNamed:@"Mode3Color"]]) {
+        return [UIColor colorNamed:@"Mode3BGColor"];
+    }
+    return [UIColor blackColor];
+}
+
 @end

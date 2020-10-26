@@ -23,6 +23,8 @@
     __weak IBOutlet UILabel *totalTimeTitleLabel;
     __weak IBOutlet UILabel *currentTimeTitleLabel;
     __weak IBOutlet UIButton *backBtn;
+    __weak IBOutlet UIView *titleView;
+    __weak IBOutlet UILabel *midLineLabel;
     
     NSMutableArray *activeArray;
     NSMutableArray *displayTableArray;
@@ -36,6 +38,9 @@
     int totalTimeInt;
     int singleItemTimeInt;
     int ignoreTimeInt;
+
+    UIColor *cellBGColor;
+    UIColor *cellTextColor;
 
     BOOL firstStart;
     BOOL firstRing;
@@ -73,31 +78,39 @@
     firstStart = YES;
     firstRing = YES;
     activeDict = [NSMutableDictionary dictionaryWithContentsOfFile:[[AppDelegate sharedAppDelegate] getActivePlistPath]];
-    
+    UIColor *titleColor = [UIColor clearColor];
     switch (statusType) {
         case 1:
             statusType = PCStatusTypeMode1;
             activeArray = activeDict[@"mode1"][activeArrayStr];
             repeatCount = [activeDict[@"mode1"][activeRepeatCount] intValue];
+            titleColor = [UIColor colorNamed:@"Mode1Color"];
             break;
         case 2:
             statusType = PCStatusTypeMode2;
             activeArray = activeDict[@"mode2"][activeArrayStr];
             repeatCount = [activeDict[@"mode2"][activeRepeatCount] intValue];
+            titleColor = [UIColor colorNamed:@"Mode2Color"];
             break;
         case 3:
             statusType = PCStatusTypeMode3;
             activeArray = activeDict[@"mode3"][activeArrayStr];
             repeatCount = [activeDict[@"mode3"][activeRepeatCount] intValue];
+            titleColor = [UIColor colorNamed:@"Mode3Color"];
             break;
         default:
             break;
     }
     
+    titleView.backgroundColor = titleColor;
+    backBtn.backgroundColor = titleColor;
+    midLineLabel.backgroundColor = titleColor;
+    cellBGColor = [[Utils sharedManager] getCellBGColor:titleColor];
+    cellTextColor = [[Utils sharedManager] getCellTextColor:titleColor];
+    
     if ([activeArray count] == 0) {
         return;
     }
-    
     
     //加總重複次數
     NSMutableArray *copyArray = [activeArray copy];
@@ -326,7 +339,9 @@
     NSDictionary *dict = displayTableArray[indexPath .row];
     [cell.activeName setTitle:dict[activeName] forState:UIControlStateNormal];
     [cell.activeTime setTitle:[dict[activeTime] stringByAppendingString:@"s"] forState:UIControlStateNormal];
-    
+    [cell.activeName setTitleColor:cellTextColor forState:UIControlStateNormal];
+    [cell.activeTime setTitleColor:cellTextColor forState:UIControlStateNormal];
+    cell.contentView.backgroundColor = cellBGColor;
     return cell;
 }
 

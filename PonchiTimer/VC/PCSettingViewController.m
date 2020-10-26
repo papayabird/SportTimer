@@ -99,7 +99,7 @@
             [self resetButtonType];
             UIButton *btn = (UIButton *)sender;
             btn.backgroundColor = [UIColor whiteColor];
-            btn.titleLabel.textColor = [UIColor blackColor];
+            [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             
             switch (tag) {
                 case 1:
@@ -219,13 +219,13 @@
 
 - (void)resetButtonType
 {
-    buttonMode1.backgroundColor = [UIColor blackColor];
-    buttonMode2.backgroundColor = [UIColor blackColor];
-    buttonMode3.backgroundColor = [UIColor blackColor];
+    buttonMode1.backgroundColor = [UIColor colorNamed:@"ScheduleBG"];
+    buttonMode2.backgroundColor = [UIColor colorNamed:@"ScheduleBG"];
+    buttonMode3.backgroundColor = [UIColor colorNamed:@"ScheduleBG"];
     
-    buttonMode1.titleLabel.textColor = [UIColor redColor];
-    buttonMode2.titleLabel.textColor = [UIColor redColor];
-    buttonMode3.titleLabel.textColor = [UIColor redColor];
+    buttonMode1.titleLabel.textColor = [UIColor whiteColor];
+    buttonMode2.titleLabel.textColor = [UIColor whiteColor];
+    buttonMode3.titleLabel.textColor = [UIColor whiteColor];
 }
 
 #pragma mark - Cell Delegate
@@ -333,7 +333,7 @@
 //    addButton.frame = CGRectMake(0, 0, 160, 44);
     [addButton setTitle:GetStringWithKeyFromTable(kAdd_Item,kLocalizable) forState:UIControlStateNormal];
     addButton.titleLabel.font = [UIFont systemFontOfSize:20.0f];
-    [addButton setTitleColor:[UIColor colorNamed:kMainColor] forState:UIControlStateNormal];
+    [addButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [addButton setBackgroundColor:[UIColor blackColor]];
     [addButton addTarget:self action:@selector(addRowAction) forControlEvents:UIControlEventTouchUpInside];
     [headerView addSubview:addButton];
@@ -385,7 +385,7 @@
     
     [cell.activeName setTitle:dict[activeName] forState:UIControlStateNormal];
     [cell.activeTime setTitle:[dict[activeTime] stringByAppendingString:@"s"] forState:UIControlStateNormal];
-    
+    cell.contentView.backgroundColor = [UIColor colorNamed:@"ScheduleBG"];
     return cell;
 }
 

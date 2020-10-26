@@ -26,7 +26,7 @@
 -(void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
 
-    [self addGradientLayer];
+//    [self addGradientLayer];
 }
 
 - (void)addGradientLayer {

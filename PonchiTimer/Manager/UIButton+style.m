@@ -13,8 +13,8 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    [self.layer setBorderColor:[UIColor colorNamed:kMainColor].CGColor];
-    [self.layer setBorderWidth:2];
+//    [self.layer setBorderColor:[UIColor colorNamed:kMainColor].CGColor];
+//    [self.layer setBorderWidth:2];
 }
 
 @end

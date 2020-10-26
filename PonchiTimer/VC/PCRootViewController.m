@@ -49,7 +49,16 @@
     [mode1Btn setTitle:GetStringWithKeyFromTable(kMode1,kLocalizable) forState:UIControlStateNormal];
     [mode2Btn setTitle:GetStringWithKeyFromTable(kMode2,kLocalizable) forState:UIControlStateNormal];
     [mode3Btn setTitle:GetStringWithKeyFromTable(kMode3,kLocalizable) forState:UIControlStateNormal];
-    [scheduleBtn setTitle:GetStringWithKeyFromTable(kSchelud,kLocalizable) forState:UIControlStateNormal];
+    [scheduleBtn setTitle:GetStringWithKeyFromTable(kSchedule,kLocalizable) forState:UIControlStateNormal];
+    
+    mode1Btn.layer.cornerRadius = 5;
+    mode1Btn.layer.masksToBounds = YES;
+    mode2Btn.layer.cornerRadius = 5;
+    mode2Btn.layer.masksToBounds = YES;
+    mode3Btn.layer.cornerRadius = 5;
+    mode3Btn.layer.masksToBounds = YES;
+    scheduleBtn.layer.cornerRadius = 5;
+    scheduleBtn.layer.masksToBounds = YES;
 }
 
 - (IBAction)startAction:(id)sender

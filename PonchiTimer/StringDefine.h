@@ -23,7 +23,7 @@
 #define kMode1 @"組別1"
 #define kMode2 @"組別2"
 #define kMode3 @"組別3"
-#define kSchelud @"排程設定"
+#define kSchedule @"排程設定"
 #define kTitle @"燃脂計時APP"
 
 //Detail VC
