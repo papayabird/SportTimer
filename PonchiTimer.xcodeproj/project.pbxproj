@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D029B6022546C359000419EE /* PCInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D029B6002546C359000419EE /* PCInfoViewController.m */; };
+		D029B6032546C359000419EE /* PCInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D029B6012546C359000419EE /* PCInfoViewController.xib */; };
 		D031ABA61AF79FA0009F3AC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D031ABA51AF79FA0009F3AC1 /* main.m */; };
 		D031ABA91AF79FA0009F3AC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D031ABA81AF79FA0009F3AC1 /* AppDelegate.m */; };
 		D031ABB11AF79FA0009F3AC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D031ABB01AF79FA0009F3AC1 /* Images.xcassets */; };
@@ -50,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D029B5FF2546C359000419EE /* PCInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCInfoViewController.h; sourceTree = "<group>"; };
+		D029B6002546C359000419EE /* PCInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCInfoViewController.m; sourceTree = "<group>"; };
+		D029B6012546C359000419EE /* PCInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PCInfoViewController.xib; sourceTree = "<group>"; };
 		D031ABA01AF79FA0009F3AC1 /* PonchiTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PonchiTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D031ABA41AF79FA0009F3AC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D031ABA51AF79FA0009F3AC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -215,6 +220,9 @@
 				D031ABDB1AF7A740009F3AC1 /* TableViewCell.h */,
 				D031ABDC1AF7A740009F3AC1 /* TableViewCell.m */,
 				D031ABDD1AF7A740009F3AC1 /* TableViewCell.xib */,
+				D029B5FF2546C359000419EE /* PCInfoViewController.h */,
+				D029B6002546C359000419EE /* PCInfoViewController.m */,
+				D029B6012546C359000419EE /* PCInfoViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -334,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D031ABD71AF7A19C009F3AC1 /* PCSettingViewController.xib in Resources */,
+				D029B6032546C359000419EE /* PCInfoViewController.xib in Resources */,
 				D031ABDF1AF7A740009F3AC1 /* TableViewCell.xib in Resources */,
 				D031ABD21AF7A18E009F3AC1 /* PCDetailViewController.xib in Resources */,
 				D0F1208925415324007222B5 /* Localizable.strings in Resources */,
@@ -370,6 +379,7 @@
 				D031ABD61AF7A19C009F3AC1 /* PCSettingViewController.m in Sources */,
 				D031ABA61AF79FA0009F3AC1 /* main.m in Sources */,
 				D0F120912541543B007222B5 /* LanguageTool.m in Sources */,
+				D029B6022546C359000419EE /* PCInfoViewController.m in Sources */,
 				D031ABDA1AF7A4C1009F3AC1 /* UIButton+style.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

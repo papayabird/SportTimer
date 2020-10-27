@@ -30,6 +30,7 @@
 #define kIsFirstIntoAppUserDefaults @"IsFirstIntoAppUserDefaults"
 #define kLanguageSetUserDefaults @"langeuageset"
 #define kAytoResetItemUserDefaults @"autoResetItem"
+#define kFirstInfoUserDefaults @"firstInfoUserDefaults"
 
 
 

@@ -159,7 +159,10 @@
 {
     [currentTimer invalidate];
     currentTimer = nil;
-    
+    [clickSoundAV stop];
+    clickSoundAV = nil;
+    [startSoundAV stop];
+    startSoundAV = nil;
     [super viewWillDisappear:animated];
 }
 

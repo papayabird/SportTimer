@@ -9,6 +9,8 @@
 #import "PCRootViewController.h"
 #import "PCDetailViewController.h"
 #import "PCSettingViewController.h"
+#import "PCInfoViewController.h"
+
 @interface PCRootViewController ()
 
 {
@@ -42,6 +44,13 @@
     [super viewDidAppear:animated];
     //本地推播先不要
 //    [[AppDelegate sharedAppDelegate] setUserNotification];
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:kFirstInfoUserDefaults]) {
+        PCInfoViewController *infoVC = [[PCInfoViewController alloc] init];
+        [self presentViewController:infoVC animated:YES completion:^{
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kFirstInfoUserDefaults];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }];
+    }
 }
 
 - (void)prepareUI {
