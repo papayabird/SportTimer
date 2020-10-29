@@ -16,21 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpA-pf-GGF">
-                        <rect key="frame" x="161" y="0.0" width="159" height="43"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                        <state key="normal" title="10S">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </state>
-                        <connections>
-                            <action selector="timeAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KO1-ZP-8gI"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="944-AM-HAj">
-                        <rect key="frame" x="0.0" y="0.0" width="162" height="43"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="944-AM-HAj">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="44"/>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <state key="normal" title="動茲動動茲動動茲動">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -41,7 +28,28 @@
                             <action selector="modeAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cIt-sZ-P3P"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpA-pf-GGF">
+                        <rect key="frame" x="160" y="0.0" width="160" height="44"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <state key="normal" title="10S">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="timeAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KO1-ZP-8gI"/>
+                        </connections>
+                    </button>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="944-AM-HAj" firstAttribute="trailing" secondItem="GpA-pf-GGF" secondAttribute="leading" id="8Bl-Je-4Uj"/>
+                    <constraint firstAttribute="bottom" secondItem="944-AM-HAj" secondAttribute="bottom" id="FSz-je-4Nj"/>
+                    <constraint firstItem="944-AM-HAj" firstAttribute="width" secondItem="GpA-pf-GGF" secondAttribute="width" id="NGo-wV-t6k"/>
+                    <constraint firstItem="944-AM-HAj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="QTk-sy-Vq9"/>
+                    <constraint firstAttribute="bottom" secondItem="GpA-pf-GGF" secondAttribute="bottom" id="g5H-2X-ZPp"/>
+                    <constraint firstItem="GpA-pf-GGF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="npm-rJ-zh9"/>
+                    <constraint firstAttribute="trailing" secondItem="GpA-pf-GGF" secondAttribute="trailing" id="s9L-vZ-YW1"/>
+                    <constraint firstItem="944-AM-HAj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vbB-O0-oF9"/>
+                </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>

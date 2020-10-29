@@ -40,7 +40,9 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
-                            <state key="selected" title="Stop!"/>
+                            <state key="selected" title="Stop!">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
                             <state key="highlighted">
                                 <color key="titleColor" red="0.95682239532470703" green="0.0" blue="0.12225879728794098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>

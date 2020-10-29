@@ -25,7 +25,8 @@
     __weak IBOutlet UILabel *totalTimeLabel;
     __weak IBOutlet UISwitch *resetSwitch;
     __weak IBOutlet UIButton *resetTimeBtn;
-    
+    __weak IBOutlet NSLayoutConstraint *TableViewWidthCons;
+
     BOOL editBool;
     int editRow;
     
