@@ -12,6 +12,7 @@
 {
     __weak IBOutlet UIImageView *infoImageView;
     int index;
+    NSMutableArray *ImageVC;
 }
 
 @end
@@ -37,6 +38,10 @@
     self.providesPresentationContextTransitionStyle = YES;
     self.definesPresentationContext = YES;
     self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:0.75f];
+    
+    ImageVC = [NSMutableArray array];
+    
+    [self initSetting];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -60,9 +65,24 @@
     }
 }
 
-- (void)BGSetting {
+- (void)initSetting {
     
-//    infoImageView.backgroundColor = index
+    UIViewController *imageVC = [[UIViewController alloc] init];
+    
+}
+
+#pragma mark - UIPageViewControllerDelegate
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
+    return (UIViewController *)ImageVC[index];
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
+    return (UIViewController *)ImageVC[index];
+}
+
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
+    
 }
 
 @end

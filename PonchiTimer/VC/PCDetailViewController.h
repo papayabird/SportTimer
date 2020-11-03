@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "SpeechUtteranceViewController.h"
-#import "PCBasicViewController.h"
 
 @interface PCDetailViewController : PCBasicViewController <UITableViewDataSource, UITableViewDelegate>
 

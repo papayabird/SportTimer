@@ -36,6 +36,7 @@
 #define kInput_Active_Time @"請輸入運動時間"
 #define kInput_Repeat_Time @"請輸入循環次數"
 #define kAdd_Item @"增加項目"
+#define kMove_Item @"移動項目"
 #define kDefault_Active_Name @"動茲動"
 #define kDefault_Reset_Name @"休息"
 #define kSaveDataError @"數據儲存失敗"

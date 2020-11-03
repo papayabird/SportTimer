@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "TableViewCell.h"
 #import "IHAlertView.h"
-#import "PCBasicViewController.h"
 typedef NS_ENUM(NSInteger, PCInputtype) {
     PCInputtypeRepeatCount = 0,
     PCInputtypeName = 1,

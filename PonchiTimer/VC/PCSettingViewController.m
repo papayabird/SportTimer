@@ -7,6 +7,9 @@
 //
 
 #import "PCSettingViewController.h"
+#define tableViewNormalWidth 320
+
+#define tableViewEditAddWidth 108
 
 @interface PCSettingViewController ()
 
@@ -29,7 +32,8 @@
 
     BOOL editBool;
     int editRow;
-    
+    BOOL moveUIBool;
+
     //inputView
     IBOutlet UIView *inputView;
     __weak IBOutlet UILabel *inputViewTitle;
@@ -53,6 +57,8 @@
     } else {
         // Fallback on earlier versions
     }
+    
+    moveUIBool = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -79,6 +85,7 @@
     resetSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:kAytoResetItemUserDefaults];
 
     [self prepareUI];
+    
 }
 
 - (void)prepareUI {
@@ -89,6 +96,8 @@
 
 - (IBAction)startAction:(id)sender
 {
+    [self backToNonEditMode];
+    
     [self saveData:^(bool isSuccess, NSString *errorStr) {
         if (!isSuccess) {
             [[Utils sharedManager] showOneBtnAlert:self title:errorStr message:@"" completion:^{
@@ -330,8 +339,24 @@
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
     
     UIButton *addButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    addButton.frame = CGRectMake(0, 0, 320, 44);
-//    addButton.frame = CGRectMake(0, 0, 160, 44);
+    
+    int leftX = 0;
+
+    if (!moveUIBool) {
+        
+    }else {
+        if (self.view.frame.size.width <= tableViewNormalWidth) {
+
+        }else {
+            if (!editBool) {
+                leftX = 0;
+            }else {
+                leftX = tableViewEditAddWidth / 2;
+            }
+        }
+    }
+
+    addButton.frame = CGRectMake(leftX, 0, 160, 44);
     [addButton setTitle:GetStringWithKeyFromTable(kAdd_Item,kLocalizable) forState:UIControlStateNormal];
     addButton.titleLabel.font = [UIFont systemFontOfSize:20.0f];
     [addButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -339,18 +364,16 @@
     [addButton addTarget:self action:@selector(addRowAction) forControlEvents:UIControlEventTouchUpInside];
     [headerView addSubview:addButton];
 
-    /*
-    UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    deleteButton.frame = CGRectMake(160, 0, 160, 44);
-    [deleteButton setTitle:@"編輯項目" forState:UIControlStateNormal];
-    [deleteButton setTitleColor:[UIColor colorNamed:kMainColor] forState:UIControlStateNormal];
-    [deleteButton setBackgroundColor:[UIColor blackColor]];
-    [deleteButton addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
-     [headerView addSubview:deleteButton];
-     */
-
     
-
+    UIButton *editButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    editButton.frame = CGRectMake(leftX + 160, 0, 160, 44);
+    [editButton setTitle:GetStringWithKeyFromTable(kMove_Item,kLocalizable) forState:UIControlStateNormal];
+    editButton.titleLabel.font = [UIFont systemFontOfSize:20.0f];
+    [editButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [editButton setBackgroundColor:[UIColor blackColor]];
+    [editButton addTarget:self action:@selector(editButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+     [headerView addSubview:editButton];
+    
     return headerView;
 }
 
@@ -371,21 +394,12 @@
     cell.delegate = weakself;
     cell.indexPath = indexPath;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    if (editBool) {
-        cell.activeName.frame = CGRectMake(16, 0, 110, 43);
-        cell.activeTime.frame = CGRectMake(121, 0, 110, 43);
-    }
-    else {
-        cell.activeName.frame = CGRectMake(0, 0, 162, 43);
-        cell.activeTime.frame = CGRectMake(161, 0, 159, 43);
-    }
-    
-    
+
     NSDictionary *dict = activeArray[indexPath .row];
     
     [cell.activeName setTitle:dict[activeName] forState:UIControlStateNormal];
     [cell.activeTime setTitle:[dict[activeTime] stringByAppendingString:@"s"] forState:UIControlStateNormal];
+
     cell.contentView.backgroundColor = [UIColor colorNamed:@"ScheduleBG"];
     return cell;
 }
@@ -393,6 +407,14 @@
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return YES;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    if (settingTableView.editing) {
+        return UITableViewCellEditingStyleNone;
+    }
+    return UITableViewCellEditingStyleDelete;
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -403,7 +425,6 @@
         
         [self reloadtableView];
     }
-
 }
 
 -(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
@@ -413,13 +434,18 @@
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
-    [activeArray exchangeObjectAtIndex:fromIndexPath.row withObjectAtIndex:toIndexPath.row];
-    [activeArray exchangeObjectAtIndex:fromIndexPath.row withObjectAtIndex:toIndexPath.row];
-    [activeArray exchangeObjectAtIndex:fromIndexPath.row withObjectAtIndex:toIndexPath.row];
+    NSMutableDictionary *from = [activeArray objectAtIndex:fromIndexPath.row];
+    [settingTableView beginUpdates];
+    [activeArray removeObjectAtIndex:fromIndexPath.row];
+    [activeArray insertObject:from atIndex:toIndexPath.row];
+    [settingTableView endUpdates];
+    [settingTableView reloadData];
 }
 
 - (void)addRowAction
 {
+    [self backToNonEditMode];
+    
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setObject:GetStringWithKeyFromTable(kDefault_Active_Name,kLocalizable) forKey:activeName];
     [dict setObject:@"0" forKey:activeTime];
@@ -441,29 +467,45 @@
                                  animated:YES];
 }
 
-- (void)deleteAction:(UIButton *)button
+- (void)editButtonAction:(UIButton *)button
 {
-    return;
-    
+    [self tableViewChangeFrame];
     if (!editBool) {
-        [settingTableView setEditing:YES animated:YES];
+        [settingTableView setEditing:YES animated:NO];
         [self reloadtableView];
         editBool = YES;
     }
     else {
-        [settingTableView setEditing:NO animated:YES];
+        [settingTableView setEditing:NO animated:NO];
         [self reloadtableView];
         editBool = NO;
     }
-
 }
 
+- (void)tableViewChangeFrame {
+    if (!moveUIBool) {return;}
+    if (self.view.frame.size.width <= tableViewNormalWidth) {
+        
+    }else {
+        if (!editBool) {
+            TableViewWidthCons.constant = TableViewWidthCons.constant + tableViewEditAddWidth;
+
+        } else {
+            TableViewWidthCons.constant = tableViewNormalWidth;
+        }
+    }
+}
+
+- (void)backToNonEditMode {
+    if (editBool) {
+        //換mode前先切回非編輯模式
+        [self editButtonAction:nil];
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 @end
