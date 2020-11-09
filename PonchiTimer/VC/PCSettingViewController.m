@@ -58,7 +58,7 @@
         // Fallback on earlier versions
     }
     
-    moveUIBool = YES;
+    moveUIBool = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated

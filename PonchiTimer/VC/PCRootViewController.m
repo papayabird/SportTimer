@@ -44,6 +44,12 @@
     [super viewDidAppear:animated];
     //本地推播先不要
 //    [[AppDelegate sharedAppDelegate] setUserNotification];
+    
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    NSArray *array = [NSArray arrayWithObjects:@"categoryIndentifier", nil];
+    [center removePendingNotificationRequestsWithIdentifiers:array];
+    
+    
     if (![[NSUserDefaults standardUserDefaults] boolForKey:kFirstInfoUserDefaults]) {
         PCInfoViewController *infoVC = [[PCInfoViewController alloc] init];
         [self presentViewController:infoVC animated:YES completion:^{
