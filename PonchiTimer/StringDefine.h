@@ -25,6 +25,8 @@
 #define kMode3 @"組別3"
 #define kSchedule @"排程設定"
 #define kTitle @"燃脂計時APP"
+#define kLoadDataError @"匯入資料有誤"
+#define kLoadDataSuccess @"匯入資料完成"
 
 //Detail VC
 #define kPlease_Create_Schedule_First @"請先設定排程"
@@ -42,6 +44,7 @@
 #define kSaveDataError @"數據儲存失敗"
 #define kDataCantZero @"時間不得為零"
 #define kActive_Time_Zero @"0"
+#define kExportToastText @"匯出中"
 
 //Language VC
 #define kEnglish_Text @"英文"

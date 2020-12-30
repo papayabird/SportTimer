@@ -40,13 +40,27 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCh-0T-tM2">
+                            <rect key="frame" x="364" y="10" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="PRN-CE-G9Y"/>
+                                <constraint firstAttribute="width" constant="50" id="ekr-KG-aiX"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="square.and.arrow.up.on.square.fill" catalog="system"/>
+                            <connections>
+                                <action selector="backupAction:" destination="-1" eventType="touchUpInside" id="8RH-Gb-cxF"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.95682239532470703" green="0.0" blue="0.12225879728794098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="WCh-0T-tM2" secondAttribute="trailing" id="3uB-va-AtT"/>
                         <constraint firstAttribute="height" constant="64" id="7Uz-jq-fOW"/>
                         <constraint firstItem="TcK-FD-SLG" firstAttribute="top" secondItem="iuq-So-2DC" secondAttribute="top" id="99K-fN-E0C"/>
                         <constraint firstItem="TcK-FD-SLG" firstAttribute="leading" secondItem="iuq-So-2DC" secondAttribute="leading" id="ELz-ty-yKU"/>
                         <constraint firstAttribute="trailing" secondItem="TcK-FD-SLG" secondAttribute="trailing" id="jAA-U1-hv0"/>
+                        <constraint firstItem="WCh-0T-tM2" firstAttribute="top" secondItem="iuq-So-2DC" secondAttribute="top" constant="10" id="rTU-KH-hEE"/>
                         <constraint firstAttribute="bottom" secondItem="TcK-FD-SLG" secondAttribute="bottom" id="zxq-rS-gag"/>
                     </constraints>
                 </view>
@@ -283,4 +297,7 @@
             <point key="canvasLocation" x="994.5" y="130"/>
         </view>
     </objects>
+    <resources>
+        <image name="square.and.arrow.up.on.square.fill" catalog="system" width="117" height="128"/>
+    </resources>
 </document>

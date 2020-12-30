@@ -108,6 +108,63 @@
     return activePlistPath;
 }
 
+- (NSString *)getCachesPath {
+    return [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"];
+}
+
+- (void)copyActivePlist {
+    NSString *cachesPath = [self getCachesPath];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager copyItemAtPath:[self getActivePlistPath] toPath:[cachesPath stringByAppendingPathComponent:kActiveText] error:nil];
+}
+
+- (void)removeCachesActivePlist {
+    NSString *cachesPath = [self getCachesPath];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager removeItemAtPath :[cachesPath stringByAppendingPathComponent:kActiveText] error:nil];
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    
+    if ([url.scheme isEqualToString:@"file"]) {        
+        //先檢查
+        NSMutableDictionary *activeDict = [NSMutableDictionary dictionaryWithContentsOfURL:url];
+        NSArray *modeKeyAr = [activeDict allKeys];
+        if (![modeKeyAr containsObject:@"mode1"] || ![modeKeyAr containsObject:@"mode2"] || ![modeKeyAr containsObject:@"mode3"]) {
+            [self loadDataError];
+            return YES;
+        }
+        for (NSString *key in modeKeyAr) {
+            NSMutableDictionary *activityDict = activeDict[key];
+            NSArray *activityKeyAr = [activityDict allKeys];
+            if (![activityKeyAr containsObject:@"activeArrayStr"]) {
+                [self loadDataError];
+                return YES;
+            }
+            if (![activityKeyAr containsObject:@"activeRepeatCount"]) {
+                [self loadDataError];
+                return YES;
+            }
+        }
+        NSLog(@"%@",activeDict);
+        //確認無誤移回
+        bool isSave = [activeDict writeToFile:[[AppDelegate sharedAppDelegate] getActivePlistPath] atomically:YES];
+        if (!isSave) {
+            [self loadDataError];
+        }else {
+            [self.window.rootViewController.view makeToast:GetStringWithKeyFromTable(kLoadDataSuccess,kLocalizable) duration:1.0f position:CSToastPositionCenter];
+        }
+    }
+    return YES;
+}
+
+- (void)loadDataError {
+    [[Utils sharedManager] showOneBtnAlert:self.window.rootViewController
+                                     title:GetStringWithKeyFromTable(kLoadDataError,kLocalizable)
+                                   message:@""
+                                completion:^{
+    }];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -28,7 +28,9 @@ static NSString *const FinishedUserDefaults = @"FinishedUserDefaults";
 + (AppDelegate *)sharedAppDelegate;
 
 - (NSString *)getActivePlistPath;
-
+- (void)copyActivePlist;
+- (NSString *)getCachesPath;
+- (void)removeCachesActivePlist;
 - (void)setUserNotification;
 
 

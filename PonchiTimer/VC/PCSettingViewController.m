@@ -238,6 +238,17 @@
     buttonMode3.titleLabel.textColor = [UIColor whiteColor];
 }
 
+- (IBAction)backupAction:(id)sender {
+    [self.view makeToast:GetStringWithKeyFromTable(kExportToastText,kLocalizable) duration:1.0f position:CSToastPositionCenter];
+    [[AppDelegate sharedAppDelegate] removeCachesActivePlist];
+    [[AppDelegate sharedAppDelegate] copyActivePlist];
+    NSArray *items = [NSArray arrayWithObjects:[NSURL fileURLWithPath:[[[AppDelegate sharedAppDelegate] getCachesPath] stringByAppendingPathComponent:kActiveText]], nil];
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
+    [self presentViewController:activityViewController animated:YES completion:^{
+
+    }];
+}
+
 #pragma mark - Cell Delegate
 -(void)selectModeActions:(int)indexPath
 {

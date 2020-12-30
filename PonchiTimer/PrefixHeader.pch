@@ -18,11 +18,13 @@
 #import "StringDefine.h"
 #import "Utils.h"
 #import "LanguageTool.h"
+#import "UIView+Toast.h"
 
 
 #define kLightColor @"LightColor"
 #define kMiddleColor @"MiddleColor"
 #define kMainColor @"MainColor"
+#define kActiveText @"active.txt"
 
 #define UIColorFromHex(hex) [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16))/255.0 green:((float)((hex & 0xFF00) >> 8))/255.0 blue:((float)(hex & 0xFF))/255.0 alpha:1.0]
 
